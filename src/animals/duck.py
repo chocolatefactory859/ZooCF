@@ -1,17 +1,17 @@
-from Animal import Animal
+from src.animal import Animal
 
 
-class Cat(Animal):
+class Duck(Animal):
     def print_your_name(self):
         """
         prints animal name
         :return: none
         """
-        print("Cat")
+        print("Duck")
 
     def print_your_sound(self):
         """
-        prints animal sound
+        prints animal name
         :return: none
         """
-        print("Meow")
+        print("Quack")

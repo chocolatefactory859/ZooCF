@@ -1,7 +1,6 @@
-from Animal import Animal
-from Animals.Cat import Cat
-from Animals.Dog import Dog
-from Animals.Duck import Duck
+from src.animals.cat import Cat
+from src.animals.dog import Dog
+from src.animals.duck import Duck
 
 
 def animal_factory(animal_name):

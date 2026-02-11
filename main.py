@@ -1,4 +1,4 @@
-from AnimalFactory import animal_factory
+from src.animal_factory import animal_factory
 import sys
 
 
