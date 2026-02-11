@@ -3,17 +3,22 @@ from abc import abstractmethod, ABC
 
 class Animal(ABC):
     @abstractmethod
+    def __iter__(self):
+        """
+        Function adds iter functionality to class
+        """
+        pass
+
+    @abstractmethod
     def print_your_name(self):
         """
-        prints animal name
-        :return: none
+        Function prints animal name
         """
         pass
 
     @abstractmethod
     def print_your_sound(self):
         """
-        prints animal sound
-        :return: none
+        Function prints animal sound
         """
         pass

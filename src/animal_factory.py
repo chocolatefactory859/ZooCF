@@ -1,3 +1,5 @@
+import os
+
 from src.animals.cat import Cat
 from src.animals.dog import Dog
 from src.animals.duck import Duck
@@ -11,11 +13,7 @@ class AnimalCreator:
         :raises: error if animal name does not exist
         :return: the created animal
         """
-        animals = {
-            'cat': Cat,
-            'dog': Dog,
-            'duck': Duck,
-        }
+        animals = os.environ.get("ANIMALS")
 
         try:
             return animals[animal_name.lower()]()

@@ -4,8 +4,12 @@ from src.animal_factory import AnimalCreator
 class Zoo:
     @staticmethod
     def create_animals(animal_names):
-        # gets input from user and returns list of animal instances
-        # first, create all animals
+        """
+        Function turns given animal names into a
+        list of animal instances
+        :param animal_names: list pf animal names to turn into instances
+        :return: list of animal instances
+        """
 
         animals = []
 

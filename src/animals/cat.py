@@ -3,18 +3,20 @@ from src.animal import Animal
 
 class Cat(Animal):
     def __iter__(self):
+        """
+        Function adds iter functionality to class
+        """
         yield self
+
     def print_your_name(self):
         """
-        prints animal name
-        :return: none
+        Function prints animal name
         """
         print("Cat")
 
     def print_your_sound(self):
         """
-        prints animal sound
-        :return: none
+        Function prints animal sound
         """
         print("Meow")
 
