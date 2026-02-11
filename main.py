@@ -1,5 +1,10 @@
-from src.animal_factory import animal_factory
+from src import parser
 import sys
+
+from src.animal_factory import AnimalCreator
+from src.file_handler import FileHandler
+from src.parser import Parser
+from src.zoo import Zoo
 
 
 def main():
@@ -9,17 +14,21 @@ def main():
     :raises: file not found error
     :return: none
     """
-    animals_file_path = sys.argv[1]
-    try:
-        with open(animals_file_path, 'r') as file:
-            for line in file:
-                potential_animal_names = line.split()
-                for potential_animal_name in potential_animal_names:
-                    animal = animal_factory(potential_animal_name)
-                    animal.print_your_sound()
-                    animal.print_your_name()
-    except FileNotFoundError:
-        raise FileNotFoundError(f"Unknown file: {animals_file_path}")
+
+    # parse input from user
+    argument_parser = Parser()
+    argument_parser.__init__()
+    animals_file_path = argument_parser.parse_input().get("filename")
+
+    # get potential animal names
+    potential_animal_names = FileHandler.file_to_list(animals_file_path)
+
+    # create animals
+    animals = Zoo.create_animals(potential_animal_names)
+
+    # call animal methods
+    Zoo.call_animal_methods(animals)
+
 
 
 if __name__ == "__main__":
