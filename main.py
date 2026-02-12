@@ -3,8 +3,10 @@ import sys
 
 from src.animal_factory import AnimalCreator
 from src.file_handler import FileHandler
+from src.module_loader import ModuleLoader
 from src.parser import Parser
 from src.zoo import Zoo
+
 
 
 def main():
@@ -24,13 +26,17 @@ def main():
     potential_animal_names = FileHandler.file_to_list(animals_file_path)
 
     # create animals
-    animals = Zoo.create_animals(potential_animal_names)
+    #animals = Zoo.create_animals(potential_animal_names)
+    #animals = AnimalCreator.animal_factory()
+
+    for p in potential_animal_names:
+        Zoo.call_animal_method(AnimalCreator.animal_factory(p))
+
 
     # call animal methods
-    Zoo.call_animal_methods(animals)
+   # Zoo.call_animal_methods(animals)
 
 
 
 if __name__ == "__main__":
     main()
-    

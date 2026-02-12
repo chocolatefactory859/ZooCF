@@ -20,7 +20,13 @@ class Zoo:
         return animals
 
     @staticmethod
+    def call_animal_method(animal):
+        animal_class = getattr(animal, animal.__name__)
+        animal_instance = animal_class()
+        animal_instance.print_your_name()
+        animal_instance.print_your_sound()
+
+    @staticmethod
     def call_animal_methods(animals):
         for animal in animals:
-            animal.print_your_name()
-            animal.print_your_sound()
+            Zoo.call_animal_method(animal)
