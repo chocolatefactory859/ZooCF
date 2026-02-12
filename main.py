@@ -1,9 +1,5 @@
-from src import parser
-import sys
-
 from src.animal_factory import AnimalCreator
 from src.file_handler import FileHandler
-from src.module_loader import ModuleLoader
 from src.parser import Parser
 from src.zoo import Zoo
 
@@ -15,15 +11,14 @@ def main():
     :raises: file not found error
     :return: none
     """
-
     argument_parser = Parser()
     argument_parser.__init__()
     animals_file_path = argument_parser.parse_input().get("filename")
 
     potential_animal_names = FileHandler.file_to_list(animals_file_path)
 
-    for p in potential_animal_names:
-        Zoo.call_animal_method(AnimalCreator.animal_factory(p))
+    for potential_animal_name in potential_animal_names:
+        Zoo.call_animal_method(AnimalCreator.animal_factory(potential_animal_name))
 
 
 if __name__ == "__main__":

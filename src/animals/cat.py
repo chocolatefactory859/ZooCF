@@ -19,4 +19,3 @@ class Cat(Animal):
         Function prints animal sound
         """
         print("Meow")
-

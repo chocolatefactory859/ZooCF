@@ -1,6 +1,3 @@
-from src.animal_factory import AnimalCreator
-
-
 class Zoo:
     @staticmethod
     def call_animal_method(animal):

@@ -1,5 +1,6 @@
 import importlib.util
 import sys
+from logging import exception
 from pathlib import Path
 
 
@@ -25,9 +26,12 @@ class ModuleLoader:
         if module_name is None:
             module_name = ModuleLoader.find_class_name(path_to_module)
 
-        spec = importlib.util.spec_from_file_location(module_name, path_to_module)
-        module = importlib.util.module_from_spec(spec)
-        sys.modules[module_name] = module
-        spec.loader.exec_module(module)
+        try:
+            spec = importlib.util.spec_from_file_location(module_name, path_to_module)
+            module = importlib.util.module_from_spec(spec)
+            sys.modules[module_name] = module
+            spec.loader.exec_module(module)
+        except ModuleNotFoundError as e:
+            raise ModuleNotFoundError(f"Module no found: {e}")
 
         return module
