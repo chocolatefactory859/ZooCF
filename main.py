@@ -8,7 +8,6 @@ from src.parser import Parser
 from src.zoo import Zoo
 
 
-
 def main():
     """
     gets file with animal names and performs
@@ -17,25 +16,14 @@ def main():
     :return: none
     """
 
-    # parse input from user
     argument_parser = Parser()
     argument_parser.__init__()
     animals_file_path = argument_parser.parse_input().get("filename")
 
-    # get potential animal names
     potential_animal_names = FileHandler.file_to_list(animals_file_path)
-
-    # create animals
-    #animals = Zoo.create_animals(potential_animal_names)
-    #animals = AnimalCreator.animal_factory()
 
     for p in potential_animal_names:
         Zoo.call_animal_method(AnimalCreator.animal_factory(p))
-
-
-    # call animal methods
-   # Zoo.call_animal_methods(animals)
-
 
 
 if __name__ == "__main__":
