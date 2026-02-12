@@ -9,7 +9,6 @@ def main():
     gets file with animal names and performs
     actions on them
     :raises: file not found error
-    :return: none
     """
     argument_parser = Parser()
     argument_parser.__init__()
