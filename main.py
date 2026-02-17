@@ -1,7 +1,7 @@
 from src.animal import Animal
 from src.animal_factory import ObjectCreator
-from src.input.file_handler import TextFileHandler
-from src.parser.argument_input_parser import ZooParser
+from src.input.text_file_handler import TextFileHandler
+from src.parser.zoo_parser import ZooParser
 
 
 def call_animal_method(animal: Animal) -> None:

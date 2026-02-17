@@ -1,19 +1,11 @@
-from src.input.input_handler import FileHandler
+from abc import ABC, abstractmethod
 
 
-class TextFileHandler(FileHandler):
+class FileHandler(ABC):
     @staticmethod
-    def read_input(file_path: str) -> list:
+    @abstractmethod
+    def read_input(input_path: str):
         """
-        Function turns given text file into list of words
-        Param: file_path: Path to file
-        Return: List of words from file
-        Raise: FileNotFoundError
+        Function reads input from input path
         """
-        try:
-            with open(file_path, 'r') as file:
-                return file.read().split()
-
-        except FileNotFoundError as error:
-            raise FileNotFoundError(f"Unknown file, {file_path}: {error}")
-
+        pass
