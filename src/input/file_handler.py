@@ -1,7 +1,7 @@
-from src.input.input_handler import InputHandler
+from src.input.input_handler import FileHandler
 
 
-class FileHandler(InputHandler):
+class TextFileHandler(FileHandler):
     @staticmethod
     def read_input(file_path: str) -> list:
         """
@@ -12,9 +12,8 @@ class FileHandler(InputHandler):
         """
         try:
             with open(file_path, 'r') as file:
-                words_from_file = file.read().split()
+                return file.read().split()
 
         except FileNotFoundError as error:
             raise FileNotFoundError(f"Unknown file, {file_path}: {error}")
 
-        return words_from_file

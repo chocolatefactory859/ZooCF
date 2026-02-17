@@ -3,7 +3,7 @@ import argparse
 from src.parser.input_parser import InputParser
 
 
-class ArgumentInputParser(InputParser):
+class ZooParser(InputParser):
     def __init__(self):
         """
         Initiate class
