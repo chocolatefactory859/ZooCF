@@ -1,5 +1,6 @@
 import os
 from types import ModuleType
+from dotenv import load_dotenv
 
 from src.module_loader import ModuleLoader
 
@@ -13,7 +14,7 @@ class ObjectCreator:
         Return: the created animal instance
         Raise: error if animal name does not exist
         """
-        object = os.getenv(object_name.upper())
+        object = os.getenv("LOCAL_PATH") + os.getenv(object_name.upper())
         object_module = ModuleLoader.load_module(object)
         object_class = getattr(object_module, object_module.__name__)
         animal_instance = object_class()

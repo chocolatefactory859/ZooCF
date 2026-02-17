@@ -27,10 +27,10 @@ class ModuleLoader:
             module_name = ModuleLoader.find_class_name(path_to_module)
 
         try:
-            spec = importlib.util.spec_from_file_location(module_name, path_to_module)
-            module = importlib.util.module_from_spec(spec)
+            specifier = importlib.util.spec_from_file_location(module_name, path_to_module)
+            module = importlib.util.module_from_spec(specifier)
             sys.modules[module_name] = module
-            spec.loader.exec_module(module)
+            specifier.loader.exec_module(module)
             return module
 
         except ModuleNotFoundError as error:

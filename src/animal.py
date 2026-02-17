@@ -2,16 +2,18 @@ from abc import abstractmethod, ABC
 
 
 class Animal(ABC):
-    @abstractmethod
+    def __init__(self, name, sound):
+        self.name = name
+        self.sound = sound
+
     def print_your_name(self):
         """
         Function prints animal name
         """
-        pass
+        print(self.name)
 
-    @abstractmethod
     def print_your_sound(self):
         """
         Function prints animal sound
         """
-        pass
+        print(self.sound)
