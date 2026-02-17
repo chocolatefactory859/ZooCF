@@ -6,15 +6,15 @@ class FileHandler(InputHandler):
     def read_input(file_path: str) -> list:
         """
         Function turns given text file into list of words
-        :param file_path: Path to file
+        Param: file_path: Path to file
+        Return: List of words from file
         Raise: FileNotFoundError
-        :return: List of words from file
         """
         try:
             with open(file_path, 'r') as file:
                 words_from_file = file.read().split()
 
         except FileNotFoundError as error:
-            raise FileNotFoundError(f"Unknown file: {error}")
+            raise FileNotFoundError(f"Unknown file, {file_path}: {error}")
 
         return words_from_file

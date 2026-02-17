@@ -7,7 +7,7 @@ from src.parser.argument_input_parser import ArgumentInputParser
 def call_animal_method(animal: Animal) -> None:
     """
     Calls animal methods
-    :param animal: animal to call methods for
+    Param: animal: animal to call methods for
     """
     animal.print_your_name()
     animal.print_your_sound()
@@ -16,7 +16,7 @@ def main():
     """
     Gets file with animal names and performs
     actions on them
-    :Raises: File not found error
+    Raise: File not found error
     """
     try:
         argument_parser = ArgumentInputParser()
