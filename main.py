@@ -1,8 +1,17 @@
 from src.animal_factory import AnimalCreator
 from src.file_handler import FileHandler
 from src.parser import Parser
-from src.zoo import Zoo
 
+
+def call_animal_method(animal):
+    """
+    Calls animal methods
+    :param animal: animal to call methods for
+    """
+    animal_class = getattr(animal, animal.__name__)
+    animal_instance = animal_class()
+    animal_instance.print_your_name()
+    animal_instance.print_your_sound()
 
 def main():
     """
@@ -16,7 +25,7 @@ def main():
     potential_animal_names = FileHandler.file_to_list(animals_file_path)
 
     for potential_animal_name in potential_animal_names:
-        Zoo.call_animal_method(AnimalCreator.animal_factory(potential_animal_name))
+        call_animal_method(AnimalCreator.animal_factory(potential_animal_name))
 
 
 if __name__ == "__main__":
