@@ -6,12 +6,11 @@ from src.zoo import Zoo
 
 def main():
     """
-    gets file with animal names and performs
+    Gets file with animal names and performs
     actions on them
-    :raises: file not found error
+    :Raises: File not found error
     """
     argument_parser = Parser()
-    argument_parser.__init__()
     animals_file_path = argument_parser.parse_input().get("filename")
 
     potential_animal_names = FileHandler.file_to_list(animals_file_path)
