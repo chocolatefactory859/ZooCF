@@ -31,7 +31,7 @@ class ModuleLoader:
             module = importlib.util.module_from_spec(spec)
             sys.modules[module_name] = module
             spec.loader.exec_module(module)
-        except ModuleNotFoundError as e:
-            raise ModuleNotFoundError(f"Module no found: {e}")
+        except ModuleNotFoundError as error:
+            raise ModuleNotFoundError(f"Module no found: {error}")
 
         return module
