@@ -1,17 +1,16 @@
+from src.animal import Animal
 from src.animal_factory import AnimalCreator
-from src.file_handler import FileHandler
+from src.input.file_handler import FileHandler
 from src.parser import Parser
 
 
-def call_animal_method(animal):
+def call_animal_method(animal: Animal) -> None:
     """
     Calls animal methods
     :param animal: animal to call methods for
     """
-    animal_class = getattr(animal, animal.__name__)
-    animal_instance = animal_class()
-    animal_instance.print_your_name()
-    animal_instance.print_your_sound()
+    animal.print_your_name()
+    animal.print_your_sound()
 
 def main():
     """
@@ -22,10 +21,11 @@ def main():
     argument_parser = Parser()
     animals_file_path = argument_parser.parse_input().get("filename")
 
-    potential_animal_names = FileHandler.file_to_list(animals_file_path)
+    potential_animal_names = FileHandler.read_input(animals_file_path)
 
     for potential_animal_name in potential_animal_names:
-        call_animal_method(AnimalCreator.animal_factory(potential_animal_name))
+        animal_to_call = AnimalCreator.animal_factory(potential_animal_name)
+        call_animal_method(animal_to_call)
 
 
 if __name__ == "__main__":

@@ -1,11 +1,12 @@
 import importlib.util
 import sys
 from pathlib import Path
+from types import ModuleType
 
 
 class ModuleLoader:
     @staticmethod
-    def find_class_name(path_to_module):
+    def find_class_name(path_to_module: str) -> str:
         """
         Function turns class path to class name
         :param path_to_module: Path to module
@@ -15,7 +16,7 @@ class ModuleLoader:
         return class_name
 
     @staticmethod
-    def load_module(path_to_module, module_name=None):
+    def load_module(path_to_module: str, module_name=None) -> ModuleType:
         """
         Function gets path to module and loads it
         :param path_to_module: Path to module

@@ -1,6 +1,9 @@
-class FileHandler:
+from src.input.input_handler import InputHandler
+
+
+class FileHandler(InputHandler):
     @staticmethod
-    def file_to_list(file_path):
+    def read_input(file_path: str) -> list:
         """
         Function turns given text file into list of words
         :param file_path: Path to file
