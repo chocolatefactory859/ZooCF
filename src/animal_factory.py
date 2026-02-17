@@ -13,7 +13,7 @@ class AnimalCreator:
         :raises: error if animal name does not exist
         :return: the created animal instance
         """
-        animal = os.environ.get(animal_name.upper())
+        animal = os.getenv(animal_name.upper())
         animal_module = ModuleLoader.load_module(animal)
         animal_class = getattr(animal_module, animal_module.__name__)
         animal_instance = animal_class()

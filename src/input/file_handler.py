@@ -7,6 +7,7 @@ class FileHandler(InputHandler):
         """
         Function turns given text file into list of words
         :param file_path: Path to file
+        Raise: FileNotFoundError
         :return: List of words from file
         """
         try:

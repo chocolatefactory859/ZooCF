@@ -22,6 +22,7 @@ class ModuleLoader:
         :param path_to_module: Path to module
         :param module_name: Module name
         :return: created module
+        raise: ModuleNotFound error
         """
         if module_name is None:
             module_name = ModuleLoader.find_class_name(path_to_module)
@@ -32,6 +33,6 @@ class ModuleLoader:
             sys.modules[module_name] = module
             spec.loader.exec_module(module)
         except ModuleNotFoundError as error:
-            raise ModuleNotFoundError(f"Module no found: {error}")
+            raise ModuleNotFoundError(f"Module given could not be found, {module_name}: {error}")
 
         return module

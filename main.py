@@ -18,14 +18,17 @@ def main():
     actions on them
     :Raises: File not found error
     """
-    argument_parser = ArgumentInputParser()
-    animals_file_path = argument_parser.parse_input().get("filename")
+    try:
+        argument_parser = ArgumentInputParser()
+        animals_file_path = argument_parser.parse_input().get("filename")
 
-    potential_animal_names = FileHandler.read_input(animals_file_path)
+        potential_animal_names = FileHandler.read_input(animals_file_path)
 
-    for potential_animal_name in potential_animal_names:
-        animal_to_call = AnimalCreator.animal_factory(potential_animal_name)
-        call_animal_method(animal_to_call)
+        for potential_animal_name in potential_animal_names:
+            animal_to_call = AnimalCreator.animal_factory(potential_animal_name)
+            call_animal_method(animal_to_call)
+    except Exception as error:
+        print(f"An error has occurred: {error}")
 
 
 if __name__ == "__main__":
