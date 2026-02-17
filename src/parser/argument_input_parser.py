@@ -1,7 +1,9 @@
 import argparse
 
+from src.parser.input_parser import InputParser
 
-class Parser:
+
+class ArgumentInputParser(InputParser):
     def __init__(self):
         """
         Initiate class

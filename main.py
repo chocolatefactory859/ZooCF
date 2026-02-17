@@ -1,7 +1,7 @@
 from src.animal import Animal
 from src.animal_factory import AnimalCreator
 from src.input.file_handler import FileHandler
-from src.parser import Parser
+from src.parser.argument_input_parser import ArgumentInputParser
 
 
 def call_animal_method(animal: Animal) -> None:
@@ -18,7 +18,7 @@ def main():
     actions on them
     :Raises: File not found error
     """
-    argument_parser = Parser()
+    argument_parser = ArgumentInputParser()
     animals_file_path = argument_parser.parse_input().get("filename")
 
     potential_animal_names = FileHandler.read_input(animals_file_path)
