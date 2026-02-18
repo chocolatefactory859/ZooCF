@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-class FileHandler(ABC):
+class FileReader(ABC):
     @staticmethod
     @abstractmethod
     def read_input(input_path: str):

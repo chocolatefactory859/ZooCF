@@ -34,6 +34,4 @@ class ModuleLoader:
             return module
 
         except ModuleNotFoundError as error:
-            raise ModuleNotFoundError(f"Module given could not be found, {module_name}: {error}")
-
-
+            print(f"Error: {error}")

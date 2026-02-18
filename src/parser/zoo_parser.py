@@ -8,7 +8,7 @@ class ZooParser(InputParser):
         self.parser = argparse.ArgumentParser()
         self.parser.add_argument("filepath", help="Please enter file path to read animal names from")
 
-    def parse_to_words(self):
+    def parse_to_words(self) -> dict:
         """
         Function parses input according to decided parameters
         :return: Parsed arguments

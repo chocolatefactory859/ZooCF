@@ -1,7 +1,7 @@
-from src.input.file_handler import FileHandler
+from src.input.file_reader import FileReader
 
 
-class TextFileHandler(FileHandler):
+class TextFileReader(FileReader):
     @staticmethod
     def read_input(file_path: str) -> list:
         """
@@ -15,4 +15,4 @@ class TextFileHandler(FileHandler):
                 return file.read().split()
 
         except FileNotFoundError as error:
-            raise FileNotFoundError(f"Unknown file, {file_path}: {error}")
+            print(f"Error: {error}")

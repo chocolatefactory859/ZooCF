@@ -1,10 +1,10 @@
 import os
 from types import ModuleType
 
-from src.module_loader import ModuleLoader
+from src.modules.module_loader import ModuleLoader
 
 
-class ObjectCreator:
+class ObjectInstanceCreator:
     @staticmethod
     def create_object(object_name: str) -> ModuleType:
         """
@@ -19,6 +19,6 @@ class ObjectCreator:
             object_class = getattr(object_module, object_module.__name__)
             object_instance = object_class()
             return object_instance
-        
+
         except ModuleNotFoundError as error:
-            raise ModuleNotFoundError(f"Module {object_name} not found: {error}")
+            print(f"Error: {error}")

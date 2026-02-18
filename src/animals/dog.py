@@ -1,4 +1,4 @@
-from src.animal import Animal
+from src.animals.animal import Animal
 
 
 class Dog(Animal):
