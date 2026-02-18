@@ -14,6 +14,7 @@ class ModuleLoader:
         class_name = Path(path_to_module).stem.capitalize()
         return class_name
 
+
     @staticmethod
     def load_module(path_to_module: str, module_name=None) -> ModuleType:
         """
@@ -25,6 +26,7 @@ class ModuleLoader:
         """
         if module_name is None:
             module_name = ModuleLoader.find_class_name(path_to_module)
+
 
         try:
             specifier = importlib.util.spec_from_file_location(module_name, path_to_module)

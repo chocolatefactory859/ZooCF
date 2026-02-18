@@ -21,7 +21,7 @@ class ZooParser(InputParser):
     def parse_to_words(self) -> dict:
         """
         Function parses input according to decided parameters
-        :return: Parsed arguments
+        Return: Parsed arguments
         """
         args = self.parser.parse_args()
         return vars(args)

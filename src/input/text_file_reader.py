@@ -10,9 +10,5 @@ class TextFileReader(FileReader):
         Return: List of words from file
         Raise: FileNotFoundError
         """
-        try:
-            with open(file_path, 'r') as file:
-                return file.read().split()
-
-        except FileNotFoundError as error:
-            print(f"Error: {error}")
+        with open(file_path, 'r') as file:
+            return file.read().split()
