@@ -1,4 +1,4 @@
-import importlib.util, sys
+import importlib, sys
 from pathlib import Path
 from types import ModuleType
 
@@ -11,29 +11,19 @@ class ModuleLoader:
         Param: path_to_module: Path to module
         Return: Class name
         """
-        class_name = Path(path_to_module).stem.capitalize()
-        return class_name
+        parts = path_to_module.split(".")
+        class_name = parts[-1]
+        return class_name.capitalize()
 
 
     @staticmethod
-    def load_module(path_to_module: str, module_name=None) -> ModuleType:
+    def load_module(path_to_module: str) -> ModuleType:
         """
         Function gets path to module and loads it
         Param: path_to_module: Path to module
-        Param: module_name: Module name
         Return: created module
-        Raise: ModuleNotFound error
         """
-        if module_name is None:
-            module_name = ModuleLoader.find_class_name(path_to_module)
+        module = importlib.import_module(path_to_module)
+        module.__name__ = ModuleLoader.find_class_name(path_to_module)
 
-
-        try:
-            specifier = importlib.util.spec_from_file_location(module_name, path_to_module)
-            module = importlib.util.module_from_spec(specifier)
-            sys.modules[module_name] = module
-            specifier.loader.exec_module(module)
-            return module
-
-        except ModuleNotFoundError as error:
-            print(f"Error: {error}")
+        return module
