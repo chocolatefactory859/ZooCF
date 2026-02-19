@@ -6,7 +6,7 @@ from src.parser.input_parser import InputParser
 class ZooParser(InputParser):
     _instance = None
     _initialized = False
-    
+
     def __new__(cls, *args, **kwargs):
         if cls._instance is None:
             cls._instance = super(ZooParser, cls).__new__(cls)
