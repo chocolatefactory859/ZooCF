@@ -14,6 +14,7 @@ def main():
         animal = ObjectInstanceCreator.create_object(potential_animal_name)
         animal.print_your_name()
         animal.print_your_sound()
+        animal.poop()
 
 
 if __name__ == "__main__":

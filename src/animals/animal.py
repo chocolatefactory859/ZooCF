@@ -17,3 +17,6 @@ class Animal(ABC):
         Function prints animal sound
         """
         print(self.sound)
+
+    def poop(self):
+        print("poop")
