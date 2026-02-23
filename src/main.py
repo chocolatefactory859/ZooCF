@@ -12,7 +12,6 @@ def main():
     potential_animal_names = TextFileReader.read_input_to_words(animals_file_path)
 
     for potential_animal_name in potential_animal_names:
-        #animal = ObjectInstanceCreator.create_object(potential_animal_name)
         animal = CreateAnimal.create_animal(potential_animal_name)
         animal.print_your_name()
         animal.print_your_sound()
