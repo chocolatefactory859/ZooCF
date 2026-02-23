@@ -20,3 +20,4 @@ class ObjectInstanceCreator:
         object_instance = object_class()
 
         return object_instance
+
