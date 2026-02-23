@@ -1,5 +1,4 @@
 import argparse
-from smtpd import usage
 
 from src.parser.input_parser import InputParser
 from src.parser.singleton_meta import SingletonMeta
