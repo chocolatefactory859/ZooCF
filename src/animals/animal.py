@@ -2,7 +2,7 @@ from abc import ABC
 
 
 class Animal(ABC):
-    def __init__(self, name, sound):
+    def __init__(self, name: str, sound: str) -> None:
         self.name = name
         self.sound = sound
 
