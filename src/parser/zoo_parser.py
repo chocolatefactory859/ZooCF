@@ -1,4 +1,5 @@
 import argparse
+from smtpd import usage
 
 from src.parser.input_parser import InputParser
 from src.parser.singleton_meta import SingletonMeta
@@ -6,7 +7,7 @@ from src.parser.singleton_meta import SingletonMeta
 
 class ZooParser(InputParser, metaclass=SingletonMeta):
     def __init__(self):
-        self.parser = argparse.ArgumentParser()
+        self.parser = argparse.ArgumentParser(usage='Parses arguments from user, according to given flags')
         self.parser.add_argument("filepath", help="Please enter file path to read animal names from")
 
     def parse_input(self) -> dict:
