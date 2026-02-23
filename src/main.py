@@ -1,4 +1,4 @@
-from src.objects.create_animal import CreateAnimal
+from src.objects.animal_creator import CreateAnimal
 from src.input.text_file_reader import TextFileReader
 from src.parser.zoo_parser import ZooParser
 
