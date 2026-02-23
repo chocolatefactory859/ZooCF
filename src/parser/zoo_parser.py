@@ -1,13 +1,13 @@
 import argparse
 
 from src.parser.input_parser import InputParser
+from src.parser.singleton_meta import SingletonMeta
 
 
-class ZooParser(InputParser):
+class ZooParser(InputParser, metaclass=SingletonMeta):
     def __init__(self):
         self.parser = argparse.ArgumentParser()
         self.parser.add_argument("filepath", help="Please enter file path to read animal names from")
-        self._initialized = True
 
     def parse_input(self) -> dict:
         """

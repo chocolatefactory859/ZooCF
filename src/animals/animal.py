@@ -1,4 +1,3 @@
-import os
 from abc import ABC
 
 
@@ -20,4 +19,7 @@ class Animal(ABC):
         print(self.sound)
 
     def poop(self):
+        """
+        Function prints poop
+        """
         print("poop")

@@ -1,5 +1,4 @@
 from src.objects.create_animal import CreateAnimal
-from src.objects.object_instance_creator import ObjectInstanceCreator
 from src.input.text_file_reader import TextFileReader
 from src.parser.zoo_parser import ZooParser
 
@@ -15,6 +14,7 @@ def main():
         animal = CreateAnimal.create_animal(potential_animal_name)
         animal.print_your_name()
         animal.print_your_sound()
+        print(f"Animal type: {type(animal)}")
         animal.poop()
 
 
