@@ -1,7 +1,7 @@
 import argparse
 
-from src.parser.input_parser import InputParser
-from src.singleton.singleton_meta import SingletonMeta
+from parser.input_parser import InputParser
+from singleton.singleton_meta import SingletonMeta
 
 
 class ZooParser(InputParser, metaclass=SingletonMeta):

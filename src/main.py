@@ -1,7 +1,7 @@
-from src.animals.animal import Animal
-from src.input.text_file_reader import TextFileReader
-from src.objects.object_instance_creator import ObjectInstanceCreator
-from src.parser.zoo_parser import ZooParser
+from animals.animal import Animal
+from input.text_file_reader import TextFileReader
+from objects.object_instance_creator import ObjectInstanceCreator
+from parser.zoo_parser import ZooParser
 
 
 def main():

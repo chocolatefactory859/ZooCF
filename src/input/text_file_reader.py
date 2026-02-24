@@ -1,4 +1,4 @@
-from src.input.file_reader import FileReader
+from input.file_reader import FileReader
 
 
 class TextFileReader(FileReader):

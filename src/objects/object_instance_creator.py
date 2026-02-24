@@ -1,7 +1,7 @@
 import os
 from types import ModuleType
 
-from src.modules.module_loader import ModuleLoader
+from modules.module_loader import ModuleLoader
 
 
 class ObjectInstanceCreator:
