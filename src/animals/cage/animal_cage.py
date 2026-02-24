@@ -47,7 +47,6 @@ class AnimalCage:
     def print_animals_to_user(self):
         """
         Display the animals in the animal_cage for the user
-        :return:
         """
         for animal in self.animal_cage:
             self.logger.info(animal.to_string())
