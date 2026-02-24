@@ -1,8 +1,14 @@
+import logging
+
+from animals.animal import Animal
+
+
 class AnimalCage:
     def __init__(self):
-        self.animal_cage = []
+        self.animal_cage: list[Animal] = []
+        self.logger = logging.getLogger(__name__)
 
-    def get_cage(self) -> list[str]:
+    def get_cage(self) -> list[Animal]:
         """
         Function to return the animal cage
         :return:
@@ -44,11 +50,11 @@ class AnimalCage:
         :return:
         """
         for animal in self.animal_cage:
-            print(animal.to_string())
+            self.logger.info(animal.to_string())
 
     def print_animals_to_developer(self):
         """
         Function to print animals to developer
         """
         for animal in self.animal_cage:
-            print(animal.__str__())
+            self.logger.info(animal.__str__())
