@@ -1,10 +1,18 @@
+import sys
+
 from animals.animal import Animal
 from input.text_file_reader import TextFileReader
+from logging_config import setup_logging
 from objects.object_instance_creator import ObjectInstanceCreator
 from parser.zoo_parser import ZooParser
 
+import logging
+
 
 def main():
+    setup_logging()
+    logger = logging.getLogger(__name__)
+
     argument_parser = ZooParser()
     received_input = argument_parser.parse_input()
     animals_file_path = received_input.get("filepath")
@@ -15,7 +23,7 @@ def main():
         animal: Animal = ObjectInstanceCreator.create_object(potential_animal_name, potential_animal_name)
         animal.print_your_name()
         animal.print_your_sound()
-        print(f"Animal type: {type(animal)}")
+        logger.info(f"Animal type: {type(animal)}")
         animal.poop()
 
 
