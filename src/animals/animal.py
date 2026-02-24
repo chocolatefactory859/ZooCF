@@ -3,8 +3,8 @@ from abc import ABC
 
 class Animal(ABC):
     def __init__(self, name: str, sound: str) -> None:
-        self.name = name
-        self.sound = sound
+        self.name: str= name
+        self.sound: str = sound
 
     def print_your_name(self):
         """

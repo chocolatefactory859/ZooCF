@@ -2,5 +2,5 @@ from src.animals.animal import Animal
 
 
 class Cat(Animal):
-    def __init__(self, name):
+    def __init__(self, name: str):
         super().__init__(name, "Meow")
