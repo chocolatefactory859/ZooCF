@@ -24,3 +24,6 @@ class Animal(ABC):
         Function prints poop
         """
         self.logger.info("poop")
+
+    def to_string(self):
+        return (f"Animal: {self.name}, Sound: {self.sound}")
