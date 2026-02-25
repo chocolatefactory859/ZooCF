@@ -6,7 +6,6 @@ from animals.animal import Animal
 class AnimalCage:
     def __init__(self):
         self.animal_cage: list[Animal] = []
-        self.logger = logging.getLogger(__name__)
 
     def get_cage(self) -> list[Animal]:
         """
@@ -49,11 +48,11 @@ class AnimalCage:
         Display the animals in the animal_cage for the user
         """
         for animal in self.animal_cage:
-            self.logger.info(animal.to_string())
+            print(animal.to_string())
 
     def print_animals_to_developer(self):
         """
         Function to print animals to developer
         """
         for animal in self.animal_cage:
-            self.logger.info(animal.__str__())
+            print(animal.__str__())

@@ -3,16 +3,15 @@ import sys
 from animals.animal import Animal
 from animals.cage.animal_cage import AnimalCage
 from input.text_file_reader import TextFileReader
-from logging_config import setup_logging
+from logging_config import Logger
 from objects.object_instance_creator import ObjectInstanceCreator
 from parser.zoo_parser import ZooParser
 
-import logging
-
+from logging_config import logger
 
 def main():
-    setup_logging()
-    logger = logging.getLogger(__name__)
+
+    logger.get_logger().info("starting main")
 
     argument_parser = ZooParser()
     received_input = argument_parser.parse_input()
