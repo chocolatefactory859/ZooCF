@@ -12,7 +12,8 @@ class Logger(metaclass=SingletonMeta):
         logging.basicConfig(
             level=logging.INFO,
             format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
-            stream=sys.stdout
+            filename = "zoo.log",
+            filemode = "a",
         )
         self.logger = logging.getLogger("main logger")
 
