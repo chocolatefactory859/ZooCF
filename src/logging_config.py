@@ -1,5 +1,4 @@
 import logging
-import sys
 
 from singleton.singleton_meta import SingletonMeta
 
@@ -11,7 +10,7 @@ class Logger(metaclass=SingletonMeta):
 
     def setup_logging(self, level=logging.INFO):
         """
-               Configure logging
+        Configure logging
         """
         logging.basicConfig(
             level=level,
@@ -24,4 +23,3 @@ class Logger(metaclass=SingletonMeta):
         return self.logger
 
 logger = Logger()
-

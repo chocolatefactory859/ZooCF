@@ -86,3 +86,7 @@
 2026-02-25 04:52:15,516 - INFO - main logger - initializing animal: cat
 2026-02-25 04:52:15,516 - INFO - main logger - initializing animal: dog
 2026-02-25 04:52:15,516 - INFO - main logger - initializing animal: duck
+2026-02-25 04:53:28,987 - INFO - main logger - starting main
+2026-02-25 04:53:28,988 - INFO - main logger - initializing animal: cat
+2026-02-25 04:53:28,988 - INFO - main logger - initializing animal: dog
+2026-02-25 04:53:28,988 - INFO - main logger - initializing animal: duck

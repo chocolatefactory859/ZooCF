@@ -1,5 +1,3 @@
-import logging
-
 from animals.animal import Animal
 
 

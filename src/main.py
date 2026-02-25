@@ -1,9 +1,6 @@
-import sys
-
 from animals.animal import Animal
 from animals.cage.animal_cage import AnimalCage
 from input.text_file_reader import TextFileReader
-from logging_config import Logger
 from objects.object_instance_creator import ObjectInstanceCreator
 from parser.zoo_parser import ZooParser
 
