@@ -6,16 +6,19 @@ from singleton.singleton_meta import SingletonMeta
 
 class Logger(metaclass=SingletonMeta):
     def __init__(self):
+        self.setup_logging()
+        self.logger = logging.getLogger("main logger")
+
+    def setup_logging(self, level=logging.INFO):
         """
-        Configure logging
+               Configure logging
         """
         logging.basicConfig(
-            level=logging.INFO,
+            level=level,
             format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
-            filename = "zoo.log",
-            filemode = "a",
+            filename="zoo.log",
+            filemode="a",
         )
-        self.logger = logging.getLogger("main logger")
 
     def get_logger(self):
         return self.logger

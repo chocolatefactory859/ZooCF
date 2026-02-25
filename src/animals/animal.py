@@ -1,10 +1,13 @@
 from abc import ABC
-import logging
+
+from logging_config import logger
+
 
 class Animal(ABC):
     def __init__(self, name: str, sound: str) -> None:
         self.name: str= name
         self.sound: str = sound
+        logger.get_logger().info(f"initializing animal: {self.name}")
 
     def print_your_name(self):
         """
