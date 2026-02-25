@@ -47,12 +47,13 @@ class AnimalCage:
         """
         Display the animals in the animal_cage for the user
         """
+        print("Animals in the animal cage:")
         for animal in self.animal_cage:
-            print(animal.to_string())
+            print(animal)
 
     def print_animals_to_developer(self):
         """
         Function to print animals to developer
         """
         for animal in self.animal_cage:
-            print(animal.__str__())
+            print(animal)

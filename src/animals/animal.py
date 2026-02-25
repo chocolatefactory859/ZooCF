@@ -27,5 +27,5 @@ class Animal(ABC):
         """
         print("poop")
 
-    def to_string(self):
-        return (f"Animal: {self.name}, Sound: {self.sound}")
+    def __str__(self):
+        return f"Animal: {self.name} sound: {self.sound}"
