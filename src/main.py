@@ -27,10 +27,11 @@ def main():
         #animal.print_your_sound()
         #logger.info(f"Animal type: {type(animal)}")
         #animal.poop()
-        animal_cage.add_animal(animal)
+        animal_cage += animal
 
     animal_cage.print_animals_to_user()
-    animal_cage.remove_animal(animal)
+    animal_cage -= animal
+
     animal_cage.print_animals_to_user()
 
 
