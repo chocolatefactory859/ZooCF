@@ -4,7 +4,7 @@ from types import ModuleType
 from modules.module_loader import ModuleLoader
 
 
-class ObjectInstanceCreator:
+class ObjectInstanceFactory:
     @staticmethod
     def create_object(object_name: str, *args, **kwargs) -> ModuleType:
         """

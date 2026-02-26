@@ -1,12 +1,12 @@
 from animals.animal import Animal
 from logging_config import Logger
 
+logger = Logger()
 
 class AnimalCage:
     def __init__(self):
         self.animals_in_cage: list[Animal] = []
-        self.logger = Logger()
-        self.logger.get_logger().info(f"initialized animal cage")
+        logger.get_logger().info(f"initialized animal cage")
 
     def __add__(self, animal):
         """
@@ -14,7 +14,7 @@ class AnimalCage:
         :param animal: Animal to add to the animals_in_cage
         """
         self.animals_in_cage.append(animal)
-        self.logger.get_logger().info(f"Added animal to animal cage")
+        logger.get_logger().info(f"Added animal to animal cage")
         return self
 
     def __sub__(self, animal):
@@ -24,8 +24,12 @@ class AnimalCage:
         """
         if animal in self.animals_in_cage:
             self.animals_in_cage.remove(animal)
-            self.logger.get_logger().info(f"removed animal from cage")
-        self.logger.get_logger().info(f"failed to remove animal from cage")
+            logger.get_logger().info(f"removed animal from cage")
+
+
+
+
+        logger.get_logger().info(f"failed to remove animal from cage")
         return self
 
     def get_cage(self) -> list[Animal]:
