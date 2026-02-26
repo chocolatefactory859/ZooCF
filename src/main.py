@@ -4,11 +4,11 @@ from input.text_file_reader import TextFileReader
 from objects.object_instance_creator import ObjectInstanceCreator
 from parser.zoo_parser import ZooParser
 
-from logging_config import logger
+from logging_config import Logger
 
 def main():
-
-    logger.get_logger().info("starting main")
+    logger = Logger()
+    logger.get_logger().info("starting zoo")
 
     argument_parser = ZooParser()
     received_input = argument_parser.parse_input()
@@ -20,10 +20,9 @@ def main():
     for potential_animal_name in potential_animal_names:
         animal: Animal = ObjectInstanceCreator.create_object(potential_animal_name, potential_animal_name)
         #zoo2:
-        #animal.print_your_name()
-        #animal.print_your_sound()
-        #logger.info(f"Animal type: {type(animal)}")
-        #animal.poop()
+        animal.print_your_name()
+        animal.print_your_sound()
+        animal.poop()
         animal_cage += animal
 
     animal_cage.print_animals_to_user()
