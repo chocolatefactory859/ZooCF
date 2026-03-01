@@ -3,6 +3,7 @@ from logging_config import Logger
 
 logger = Logger()
 
+
 class AnimalCage:
     def __init__(self):
         self.animals_in_cage: list[Animal] = []
@@ -29,19 +30,19 @@ class AnimalCage:
         logger.get_logger().info(f"failed to remove animal from cage")
         return self
 
-    def get_cage(self) -> list[Animal]:
-        """
-        Function to return the animal cage
-        :return: Animals in the animal cage
-        """
-        return self.animals_in_cage
-
     def __len__(self):
         """
         Function to return the amount of animals in the animals_in_cage
         :return: Amount of animals in the animals_in_cage
         """
         return len(self.animals_in_cage)
+
+    def get_cage(self) -> list[Animal]:
+        """
+        Function to return the animal cage
+        :return: Animals in the animal cage
+        """
+        return self.animals_in_cage
 
     def add_cage_to_cage(self, cage):
         """
@@ -51,17 +52,18 @@ class AnimalCage:
         for animal in cage.get_cage():
             self.animals_in_cage.append(animal)
 
-    def print_animals_to_user(self):
+
+    def __str__(self):
         """
         Display the animals in the animals_in_cage for the user
         """
-        print("Animals in the animal cage:")
-        for animal in self.animals_in_cage:
-            print(animal)
+        if not self.animals_in_cage:
+            return "Animal cage is empty"
+        animal_strs = [str(animal) for animal in self.animals_in_cage]
+        return f"AnimalCage with {len(self.animals_in_cage)} animals:\n" + "\n".join(animal_strs)
 
-    def print_animals_to_developer(self):
+    def __repr__(self):
         """
         Function to print animals to developer
         """
-        for animal in self.animals_in_cage:
-            print(animal)
+        return f"AnimalCage(animals_in_cage={self.animals_in_cage!r})"

@@ -27,10 +27,10 @@ def main():
         animal.poop()
         animal_cage += animal
 
-    animal_cage.print_animals_to_user()
+    print(animal_cage)
     animal_cage -= animal
 
-    animal_cage.print_animals_to_user()
+    print(animal_cage)
     print(len(animal_cage))
 
 
