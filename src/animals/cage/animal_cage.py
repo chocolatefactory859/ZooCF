@@ -26,9 +26,6 @@ class AnimalCage:
             self.animals_in_cage.remove(animal)
             logger.get_logger().info(f"removed animal from cage")
 
-
-
-
         logger.get_logger().info(f"failed to remove animal from cage")
         return self
 
@@ -39,7 +36,7 @@ class AnimalCage:
         """
         return self.animals_in_cage
 
-    def amount_of_animals(self):
+    def __len__(self):
         """
         Function to return the amount of animals in the animals_in_cage
         :return: Amount of animals in the animals_in_cage

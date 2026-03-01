@@ -31,6 +31,7 @@ def main():
     animal_cage -= animal
 
     animal_cage.print_animals_to_user()
+    print(len(animal_cage))
 
 
 
