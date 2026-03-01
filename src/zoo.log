@@ -503,3 +503,225 @@
 2026-03-01 15:48:32,502 - INFO - main logger - Added animal to animal cage
 2026-03-01 15:48:32,502 - INFO - main logger - removed animal from cage
 2026-03-01 15:48:32,502 - INFO - main logger - failed to remove animal from cage
+2026-03-01 15:53:43,301 - INFO - main logger - starting zoo
+2026-03-01 15:54:23,839 - INFO - main logger - starting zoo
+2026-03-01 15:54:59,937 - INFO - main logger - starting zoo
+2026-03-01 15:54:59,992 - INFO - main logger - initialized animal cage
+2026-03-01 15:54:59,994 - INFO - main logger - initialized animal: cat
+2026-03-01 15:54:59,994 - INFO - main logger - printed animal name: cat
+2026-03-01 15:54:59,994 - INFO - main logger - printed animal sound: Meow
+2026-03-01 15:54:59,994 - INFO - main logger - printed animal poop: cat
+2026-03-01 15:54:59,994 - INFO - main logger - Added animal to animal cage
+2026-03-01 15:54:59,995 - INFO - main logger - initialized animal: dog
+2026-03-01 15:54:59,995 - INFO - main logger - printed animal name: dog
+2026-03-01 15:54:59,995 - INFO - main logger - printed animal sound: How
+2026-03-01 15:54:59,995 - INFO - main logger - printed animal poop: dog
+2026-03-01 15:54:59,995 - INFO - main logger - Added animal to animal cage
+2026-03-01 15:54:59,996 - INFO - main logger - initialized animal: duck
+2026-03-01 15:54:59,996 - INFO - main logger - printed animal name: duck
+2026-03-01 15:54:59,996 - INFO - main logger - printed animal sound: Quack
+2026-03-01 15:54:59,996 - INFO - main logger - printed animal poop: duck
+2026-03-01 15:54:59,997 - INFO - main logger - Added animal to animal cage
+2026-03-01 15:54:59,997 - INFO - main logger - removed animal from cage
+2026-03-01 15:54:59,997 - INFO - main logger - failed to remove animal from cage
+2026-03-01 15:55:29,512 - INFO - main logger - starting zoo
+2026-03-01 15:55:48,503 - INFO - main logger - starting zoo
+2026-03-01 15:55:48,517 - INFO - main logger - initialized animal cage
+2026-03-01 15:55:48,519 - INFO - main logger - initialized animal: cat
+2026-03-01 15:55:48,519 - INFO - main logger - printed animal name: cat
+2026-03-01 15:55:48,519 - INFO - main logger - printed animal sound: Meow
+2026-03-01 15:55:48,520 - INFO - main logger - printed animal poop: cat
+2026-03-01 15:58:10,722 - INFO - main logger - starting zoo
+2026-03-01 16:10:38,364 - INFO - main logger - starting zoo
+2026-03-01 16:10:38,383 - INFO - main logger - initialized animal cage
+2026-03-01 16:10:38,385 - INFO - main logger - initialized animal: cat
+2026-03-01 16:10:38,385 - INFO - main logger - printed animal name: cat
+2026-03-01 16:10:38,385 - INFO - main logger - printed animal sound: Meow
+2026-03-01 16:10:38,385 - INFO - main logger - printed animal poop: cat
+2026-03-01 16:12:26,740 - INFO - main logger - starting zoo
+2026-03-01 16:12:26,754 - INFO - main logger - initialized animal cage
+2026-03-01 16:12:26,756 - INFO - main logger - initialized animal: cat
+2026-03-01 16:12:26,756 - INFO - main logger - printed animal name: cat
+2026-03-01 16:12:26,756 - INFO - main logger - printed animal sound: Meow
+2026-03-01 16:12:26,756 - INFO - main logger - printed animal poop: cat
+2026-03-01 16:12:26,756 - INFO - main logger - Added animal to animal cage
+2026-03-01 16:12:26,756 - INFO - main logger - initialized animal: dog
+2026-03-01 16:12:26,756 - INFO - main logger - printed animal name: dog
+2026-03-01 16:12:26,757 - INFO - main logger - printed animal sound: How
+2026-03-01 16:12:26,757 - INFO - main logger - printed animal poop: dog
+2026-03-01 16:12:26,757 - INFO - main logger - Added animal to animal cage
+2026-03-01 16:12:26,759 - INFO - main logger - initialized animal: duck
+2026-03-01 16:12:26,759 - INFO - main logger - printed animal name: duck
+2026-03-01 16:12:26,759 - INFO - main logger - printed animal sound: Quack
+2026-03-01 16:12:26,759 - INFO - main logger - printed animal poop: duck
+2026-03-01 16:12:26,759 - INFO - main logger - Added animal to animal cage
+2026-03-01 16:12:26,759 - INFO - main logger - removed animal from cage
+2026-03-01 16:12:26,759 - INFO - main logger - failed to remove animal from cage
+2026-03-01 16:14:37,399 - INFO - main logger - starting zoo
+2026-03-01 16:14:37,415 - INFO - main logger - initialized animal cage
+2026-03-01 16:14:37,416 - INFO - main logger - initialized animal: cat
+2026-03-01 16:14:37,417 - INFO - main logger - printed animal name: cat
+2026-03-01 16:14:37,417 - INFO - main logger - printed animal sound: Meow
+2026-03-01 16:14:37,417 - INFO - main logger - printed animal poop: cat
+2026-03-01 16:14:37,417 - INFO - main logger - Added animal to animal cage
+2026-03-01 16:14:37,417 - INFO - main logger - initialized animal: dog
+2026-03-01 16:14:37,418 - INFO - main logger - printed animal name: dog
+2026-03-01 16:14:37,418 - INFO - main logger - printed animal sound: How
+2026-03-01 16:14:37,418 - INFO - main logger - printed animal poop: dog
+2026-03-01 16:14:37,418 - INFO - main logger - Added animal to animal cage
+2026-03-01 16:14:37,419 - INFO - main logger - initialized animal: duck
+2026-03-01 16:14:37,419 - INFO - main logger - printed animal name: duck
+2026-03-01 16:14:37,419 - INFO - main logger - printed animal sound: Quack
+2026-03-01 16:14:37,419 - INFO - main logger - printed animal poop: duck
+2026-03-01 16:14:37,419 - INFO - main logger - Added animal to animal cage
+2026-03-01 16:14:37,419 - INFO - main logger - removed animal from cage
+2026-03-01 16:14:37,419 - INFO - main logger - failed to remove animal from cage
+2026-03-01 16:14:49,555 - INFO - main logger - starting zoo
+2026-03-01 16:14:49,570 - INFO - main logger - initialized animal cage
+2026-03-01 16:14:49,572 - INFO - main logger - initialized animal: cat
+2026-03-01 16:14:49,572 - INFO - main logger - printed animal name: cat
+2026-03-01 16:14:49,572 - INFO - main logger - printed animal sound: Meow
+2026-03-01 16:14:49,572 - INFO - main logger - printed animal poop: cat
+2026-03-01 16:14:49,572 - INFO - main logger - Added animal to animal cage
+2026-03-01 16:14:49,572 - INFO - main logger - initialized animal: dog
+2026-03-01 16:14:49,573 - INFO - main logger - printed animal name: dog
+2026-03-01 16:14:49,573 - INFO - main logger - printed animal sound: How
+2026-03-01 16:14:49,573 - INFO - main logger - printed animal poop: dog
+2026-03-01 16:14:49,573 - INFO - main logger - Added animal to animal cage
+2026-03-01 16:14:49,573 - INFO - main logger - initialized animal: duck
+2026-03-01 16:14:49,573 - INFO - main logger - printed animal name: duck
+2026-03-01 16:14:49,573 - INFO - main logger - printed animal sound: Quack
+2026-03-01 16:14:49,573 - INFO - main logger - printed animal poop: duck
+2026-03-01 16:14:49,573 - INFO - main logger - Added animal to animal cage
+2026-03-01 16:14:49,573 - INFO - main logger - removed animal from cage
+2026-03-01 16:14:49,573 - INFO - main logger - failed to remove animal from cage
+2026-03-01 16:15:59,001 - INFO - main logger - starting zoo
+2026-03-01 16:15:59,016 - INFO - main logger - initialized animal cage
+2026-03-01 16:15:59,017 - INFO - main logger - initialized animal: cat
+2026-03-01 16:15:59,018 - INFO - main logger - printed animal name: cat
+2026-03-01 16:15:59,018 - INFO - main logger - printed animal sound: Meow
+2026-03-01 16:15:59,018 - INFO - main logger - printed animal poop: cat
+2026-03-01 16:15:59,018 - INFO - main logger - Added animal to animal cage
+2026-03-01 16:15:59,019 - INFO - main logger - initialized animal: dog
+2026-03-01 16:15:59,019 - INFO - main logger - printed animal name: dog
+2026-03-01 16:15:59,019 - INFO - main logger - printed animal sound: How
+2026-03-01 16:15:59,019 - INFO - main logger - printed animal poop: dog
+2026-03-01 16:15:59,019 - INFO - main logger - Added animal to animal cage
+2026-03-01 16:15:59,019 - INFO - main logger - initialized animal: duck
+2026-03-01 16:15:59,019 - INFO - main logger - printed animal name: duck
+2026-03-01 16:15:59,019 - INFO - main logger - printed animal sound: Quack
+2026-03-01 16:15:59,020 - INFO - main logger - printed animal poop: duck
+2026-03-01 16:15:59,020 - INFO - main logger - Added animal to animal cage
+2026-03-01 16:15:59,020 - INFO - main logger - removed animal from cage
+2026-03-01 16:15:59,020 - INFO - main logger - failed to remove animal from cage
+2026-03-01 16:20:21,766 - INFO - main logger - starting zoo
+2026-03-01 16:20:21,787 - INFO - main logger - initialized animal cage
+2026-03-01 16:20:21,787 - INFO - main logger - initialized animal cage
+2026-03-01 16:20:21,792 - INFO - main logger - initialized animal: cat
+2026-03-01 16:20:21,792 - INFO - main logger - printed animal name: cat
+2026-03-01 16:20:21,792 - INFO - main logger - printed animal sound: Meow
+2026-03-01 16:20:21,792 - INFO - main logger - printed animal poop: cat
+2026-03-01 16:20:40,619 - INFO - main logger - starting zoo
+2026-03-01 16:20:40,626 - INFO - main logger - initialized animal cage
+2026-03-01 16:20:40,626 - INFO - main logger - initialized animal cage
+2026-03-01 16:20:40,630 - INFO - main logger - initialized animal: cat
+2026-03-01 16:20:40,630 - INFO - main logger - printed animal name: cat
+2026-03-01 16:20:40,631 - INFO - main logger - printed animal sound: Meow
+2026-03-01 16:20:40,631 - INFO - main logger - printed animal poop: cat
+2026-03-01 16:22:07,390 - INFO - main logger - starting zoo
+2026-03-01 16:22:07,396 - INFO - main logger - initialized animal cage
+2026-03-01 16:22:07,396 - INFO - main logger - initialized animal cage
+2026-03-01 16:22:07,402 - INFO - main logger - initialized animal: cat
+2026-03-01 16:22:07,402 - INFO - main logger - printed animal name: cat
+2026-03-01 16:22:07,403 - INFO - main logger - printed animal sound: Meow
+2026-03-01 16:22:07,403 - INFO - main logger - printed animal poop: cat
+2026-03-01 16:22:49,900 - INFO - main logger - starting zoo
+2026-03-01 16:22:49,908 - INFO - main logger - initialized animal cage
+2026-03-01 16:22:49,908 - INFO - main logger - initialized animal cage
+2026-03-01 16:23:06,973 - INFO - main logger - initialized animal: cat
+2026-03-01 16:23:06,974 - INFO - main logger - printed animal name: cat
+2026-03-01 16:23:06,974 - INFO - main logger - printed animal sound: Meow
+2026-03-01 16:23:06,974 - INFO - main logger - printed animal poop: cat
+2026-03-01 16:23:54,778 - INFO - main logger - starting zoo
+2026-03-01 16:23:54,793 - INFO - main logger - initialized animal cage
+2026-03-01 16:23:54,793 - INFO - main logger - initialized animal cage
+2026-03-01 16:23:54,795 - INFO - main logger - initialized animal: cat
+2026-03-01 16:23:54,795 - INFO - main logger - printed animal name: cat
+2026-03-01 16:23:54,795 - INFO - main logger - printed animal sound: Meow
+2026-03-01 16:23:54,795 - INFO - main logger - printed animal poop: cat
+2026-03-01 16:27:38,758 - INFO - main logger - starting zoo
+2026-03-01 16:27:38,776 - INFO - main logger - initialized animal cage
+2026-03-01 16:27:38,776 - INFO - main logger - initialized animal cage
+2026-03-01 16:27:38,779 - INFO - main logger - initialized animal: cat
+2026-03-01 16:27:38,779 - INFO - main logger - printed animal name: cat
+2026-03-01 16:27:38,779 - INFO - main logger - printed animal sound: Meow
+2026-03-01 16:27:38,779 - INFO - main logger - printed animal poop: cat
+2026-03-01 17:04:08,831 - INFO - main logger - starting zoo
+2026-03-01 17:04:08,853 - INFO - main logger - initialized animal cage
+2026-03-01 17:04:08,853 - INFO - main logger - initialized animal cage
+2026-03-01 17:04:08,855 - INFO - main logger - initialized animal: cat
+2026-03-01 17:04:08,855 - INFO - main logger - printed animal name: cat
+2026-03-01 17:04:08,855 - INFO - main logger - printed animal sound: Meow
+2026-03-01 17:04:08,855 - INFO - main logger - printed animal poop: cat
+2026-03-01 17:04:08,856 - INFO - main logger - Added animal to animal cage
+2026-03-01 17:04:08,856 - INFO - main logger - Added animal to animal cage
+2026-03-01 17:04:08,856 - INFO - main logger - initialized animal: dog
+2026-03-01 17:04:08,856 - INFO - main logger - printed animal name: dog
+2026-03-01 17:04:08,857 - INFO - main logger - printed animal sound: How
+2026-03-01 17:04:08,857 - INFO - main logger - printed animal poop: dog
+2026-03-01 17:04:08,857 - INFO - main logger - Added animal to animal cage
+2026-03-01 17:04:08,857 - INFO - main logger - Added animal to animal cage
+2026-03-01 17:04:08,857 - INFO - main logger - initialized animal: duck
+2026-03-01 17:04:08,858 - INFO - main logger - printed animal name: duck
+2026-03-01 17:04:08,858 - INFO - main logger - printed animal sound: Quack
+2026-03-01 17:04:08,858 - INFO - main logger - printed animal poop: duck
+2026-03-01 17:04:08,858 - INFO - main logger - Added animal to animal cage
+2026-03-01 17:04:08,858 - INFO - main logger - Added animal to animal cage
+2026-03-01 17:04:08,858 - INFO - main logger - removed animal from cage
+2026-03-01 17:04:08,858 - INFO - main logger - failed to remove animal from cage
+2026-03-01 17:05:54,462 - INFO - main logger - starting zoo
+2026-03-01 17:05:54,476 - INFO - main logger - initialized animal cage
+2026-03-01 17:05:54,476 - INFO - main logger - initialized animal cage
+2026-03-01 17:05:54,479 - INFO - main logger - initialized animal: cat
+2026-03-01 17:05:54,479 - INFO - main logger - printed animal name: cat
+2026-03-01 17:05:54,479 - INFO - main logger - printed animal sound: Meow
+2026-03-01 17:05:54,479 - INFO - main logger - printed animal poop: cat
+2026-03-01 17:05:54,479 - INFO - main logger - Added animal to animal cage
+2026-03-01 17:05:54,479 - INFO - main logger - Added animal to animal cage
+2026-03-01 17:05:54,480 - INFO - main logger - initialized animal: dog
+2026-03-01 17:05:54,480 - INFO - main logger - printed animal name: dog
+2026-03-01 17:05:54,480 - INFO - main logger - printed animal sound: How
+2026-03-01 17:05:54,480 - INFO - main logger - printed animal poop: dog
+2026-03-01 17:05:54,480 - INFO - main logger - Added animal to animal cage
+2026-03-01 17:05:54,480 - INFO - main logger - Added animal to animal cage
+2026-03-01 17:05:54,480 - INFO - main logger - initialized animal: duck
+2026-03-01 17:05:54,481 - INFO - main logger - printed animal name: duck
+2026-03-01 17:05:54,481 - INFO - main logger - printed animal sound: Quack
+2026-03-01 17:05:54,481 - INFO - main logger - printed animal poop: duck
+2026-03-01 17:05:54,481 - INFO - main logger - Added animal to animal cage
+2026-03-01 17:05:54,481 - INFO - main logger - Added animal to animal cage
+2026-03-01 17:05:54,481 - INFO - main logger - removed animal from cage
+2026-03-01 17:05:54,481 - INFO - main logger - failed to remove animal from cage
+2026-03-01 17:06:11,966 - INFO - main logger - starting zoo
+2026-03-01 17:06:11,983 - INFO - main logger - initialized animal cage
+2026-03-01 17:06:11,984 - INFO - main logger - initialized animal cage
+2026-03-01 17:06:11,985 - INFO - main logger - initialized animal: cat
+2026-03-01 17:06:11,985 - INFO - main logger - printed animal name: cat
+2026-03-01 17:06:11,985 - INFO - main logger - printed animal sound: Meow
+2026-03-01 17:06:11,985 - INFO - main logger - printed animal poop: cat
+2026-03-01 17:06:11,986 - INFO - main logger - Added animal to animal cage
+2026-03-01 17:06:11,986 - INFO - main logger - Added animal to animal cage
+2026-03-01 17:06:11,987 - INFO - main logger - initialized animal: dog
+2026-03-01 17:06:11,987 - INFO - main logger - printed animal name: dog
+2026-03-01 17:06:11,987 - INFO - main logger - printed animal sound: How
+2026-03-01 17:06:11,987 - INFO - main logger - printed animal poop: dog
+2026-03-01 17:06:11,987 - INFO - main logger - Added animal to animal cage
+2026-03-01 17:06:11,987 - INFO - main logger - Added animal to animal cage
+2026-03-01 17:06:11,989 - INFO - main logger - initialized animal: duck
+2026-03-01 17:06:11,989 - INFO - main logger - printed animal name: duck
+2026-03-01 17:06:11,989 - INFO - main logger - printed animal sound: Quack
+2026-03-01 17:06:11,989 - INFO - main logger - printed animal poop: duck
+2026-03-01 17:06:11,989 - INFO - main logger - Added animal to animal cage
+2026-03-01 17:06:11,990 - INFO - main logger - Added animal to animal cage
+2026-03-01 17:06:11,990 - INFO - main logger - removed animal from cage
+2026-03-01 17:06:11,990 - INFO - main logger - failed to remove animal from cage

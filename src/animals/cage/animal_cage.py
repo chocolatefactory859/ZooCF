@@ -6,15 +6,16 @@ logger = Logger()
 
 class AnimalCage:
     def __init__(self):
-        self.animals_in_cage: list[Animal] = []
+        self._animals_in_cage: list[Animal] = []
         logger.get_logger().info(f"initialized animal cage")
 
     def __add__(self, animal):
         """
         Function to add an animal to the animals_in_cage
         :param animal: Animal to add to the animals_in_cage
+        Usage: cage + animal
         """
-        self.animals_in_cage.append(animal)
+        self._animals_in_cage.append(animal)
         logger.get_logger().info(f"Added animal to animal cage")
         return self
 
@@ -23,8 +24,8 @@ class AnimalCage:
         Function to remove an animal from the animals_in_cage
         :param animal: Animal to remove from the animals_in_cage
         """
-        if animal in self.animals_in_cage:
-            self.animals_in_cage.remove(animal)
+        if animal in self._animals_in_cage:
+            self._animals_in_cage.remove(animal)
             logger.get_logger().info(f"removed animal from cage")
 
         logger.get_logger().info(f"failed to remove animal from cage")
@@ -37,21 +38,15 @@ class AnimalCage:
         """
         return len(self.animals_in_cage)
 
-    def get_cage(self) -> list[Animal]:
+    def __iadd__(self, other_cage):
         """
-        Function to return the animal cage
-        :return: Animals in the animal cage
+        Function adds another animal cage to current cage
+        :param other_cage: cage to add to current cage
+        :return: original cage, with added members from second cage
+        Usage: cage_1 += cage_2
         """
-        return self.animals_in_cage
-
-    def add_cage_to_cage(self, cage):
-        """
-        Function to add an animal to the animals_in_cage
-        :param cage: Cage to add to the animals_in_cage
-        """
-        for animal in cage.get_cage():
-            self.animals_in_cage.append(animal)
-
+        self._animals_in_cage.extend(other_cage.animals_in_cage)
+        return self
 
     def __str__(self):
         """
@@ -59,11 +54,21 @@ class AnimalCage:
         """
         if not self.animals_in_cage:
             return "Animal cage is empty"
-        animal_strs = [str(animal) for animal in self.animals_in_cage]
-        return f"AnimalCage with {len(self.animals_in_cage)} animals:\n" + "\n".join(animal_strs)
+        animal_strs = [str(animal) for animal in self._animals_in_cage]
+        return f"AnimalCage with {len(self._animals_in_cage)} animals:\n" + "\n".join(animal_strs)
 
     def __repr__(self):
         """
         Function to print animals to developer
         """
-        return f"AnimalCage(animals_in_cage={self.animals_in_cage!r})"
+        return f"AnimalCage(animals_in_cage={self._animals_in_cage!r})"
+
+    @property
+    def animals_in_cage(self):
+        return self._animals_in_cage
+
+    @animals_in_cage.setter
+    def animals_in_cage(self, value):
+        if not isinstance(value, list):
+            raise ValueError("Must be a list of Animal objects")
+        self._animals_in_cage = value

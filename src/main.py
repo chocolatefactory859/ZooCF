@@ -18,6 +18,7 @@ def main():
 
     potential_animal_names = TextFileReader.read_input_to_words(animals_file_path)
     animal_cage = AnimalCage()
+    animal_cage_2 = AnimalCage()
 
     for potential_animal_name in potential_animal_names:
         animal: Animal = ObjectInstanceFactory.create_object(potential_animal_name, potential_animal_name)
@@ -25,13 +26,17 @@ def main():
         animal.print_your_name()
         animal.print_your_sound()
         animal.poop()
-        animal_cage += animal
+        animal_cage = animal_cage + animal
+        animal_cage_2 = animal_cage_2 + animal
 
     print(animal_cage)
     animal_cage -= animal
 
     print(animal_cage)
     print(len(animal_cage))
+
+    animal_cage += animal_cage_2
+    print(animal_cage)
 
 
 
