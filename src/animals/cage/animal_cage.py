@@ -12,7 +12,7 @@ class AnimalCage:
         self._animals_in_cage: list[Animal] = []
         logger.info("Initialized animal cage")
 
-    def __add__(self, other: Union[Animal, AnimalCage]) -> AnimalCage:
+    def __add__(self, other: Animal | AnimalCage) -> AnimalCage:
         """
         Add an animal or merge another cage into this cage.
 
@@ -26,7 +26,9 @@ class AnimalCage:
 
         elif isinstance(other, AnimalCage):
             logger.debug("__add__ called with AnimalCage containing %d animals", len(other.animals_in_cage))
-            self._animals_in_cage.extend(other.animals_in_cage)
+            new_cage = AnimalCage()
+            new_cage._animals_in_cage = (self._animals_in_cage.copy() + other.animals_in_cage.copy())
+            return new_cage
 
         else:
             logger.error("Attempted to add unsupported type: %s", type(other))
@@ -35,7 +37,7 @@ class AnimalCage:
         logger.debug("Cage now contains %d animals", len(self._animals_in_cage))
         return self
 
-    def __sub__(self, animal: Animal) -> "AnimalCage":
+    def __sub__(self, animal: Animal) -> AnimalCage:
         """
         Remove an animal from the cage.
 
@@ -68,8 +70,8 @@ class AnimalCage:
         """
         if not self.animals_in_cage:
             return "Animal cage is empty"
-        animal_strings = [str(animal) for animal in self._animals_in_cage]
 
+        animal_strings = [str(animal) for animal in self._animals_in_cage]
         return f"AnimalCage with {len(self._animals_in_cage)} animals:\n" + "\n".join(animal_strings)
 
     def __repr__(self) -> str:
