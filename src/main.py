@@ -10,7 +10,7 @@ logger = Logger()
 
 
 def main():
-    logger.get_logger().info("starting zoo")
+    logger.info("starting zoo")
 
     argument_parser = ZooParser()
     received_input = argument_parser.parse_input()

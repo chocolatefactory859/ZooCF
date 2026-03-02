@@ -7,7 +7,7 @@ logger = Logger()
 class AnimalCage:
     def __init__(self):
         self._animals_in_cage: list[Animal] = []
-        logger.get_logger().info(f"initialized animal cage")
+        logger.info(f"initialized animal cage")
 
     def __add__(self, animal):
         """
@@ -16,7 +16,7 @@ class AnimalCage:
         Usage: cage + animal
         """
         self._animals_in_cage.append(animal)
-        logger.get_logger().info(f"Added animal to animal cage")
+        logger.info(f"Added animal to animal cage")
         return self
 
     def __sub__(self, animal):
@@ -26,9 +26,9 @@ class AnimalCage:
         """
         if animal in self._animals_in_cage:
             self._animals_in_cage.remove(animal)
-            logger.get_logger().info(f"removed animal from cage")
+            logger.info(f"removed animal from cage")
 
-        logger.get_logger().info(f"failed to remove animal from cage")
+        logger.info(f"failed to remove animal from cage")
         return self
 
     def __len__(self):

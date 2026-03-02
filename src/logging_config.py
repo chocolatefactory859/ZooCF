@@ -19,6 +19,8 @@ class Logger(metaclass=SingletonMeta):
             filemode="a",
         )
 
-    def get_logger(self):
-        return self.logger
-
+    def __getattr__(self, name):
+        """
+        Delegate attribute access to the internal logger.
+        """
+        return getattr(self.logger, name)
