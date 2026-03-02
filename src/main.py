@@ -33,11 +33,10 @@ def main():
     animal_cage -= animal
 
     print(animal_cage)
-    print(len(animal_cage))
+    print(f"Amount of animals in cage: {len(animal_cage)}")
 
     animal_cage += animal_cage_2
     print(animal_cage)
-
 
 
 if __name__ == "__main__":

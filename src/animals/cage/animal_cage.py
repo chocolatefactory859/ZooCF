@@ -1,4 +1,5 @@
 from __future__ import annotations
+from typing import Union
 
 from animals.animal import Animal
 from logging_config import Logger
@@ -10,53 +11,56 @@ class AnimalCage:
     def __init__(self):
         self._animals_in_cage: list[Animal] = []
         logger.info("Initialized animal cage")
-        logger.debug("Animal cage created with empty list")
 
-    def __add__(self, animal: Animal) -> AnimalCage:
+    def __add__(self, other: Union[Animal, AnimalCage]) -> AnimalCage:
         """
-        Function to add an animal to the animals_in_cage
-        :param animal: Animal to add to the animals_in_cage
-        Usage: cage + animal
+        Add an animal or merge another cage into this cage.
+
+        :param other: Animal or AnimalCage to add
+        :raises TypeError: if other is not an Animal or AnimalCage
+        :return: Self (the cage after addition)
         """
-        logger.debug(f"__add__ called with: {animal}")
-        self._animals_in_cage.append(animal)
-        logger.info(f"Added animal to animal cage")
-        logger.debug(f"Cage now contains {len(self._animals_in_cage)} animals")
+        if isinstance(other, Animal):
+            logger.debug("__add__ called with Animal: %s", other)
+            self._animals_in_cage.append(other)
+
+        elif isinstance(other, AnimalCage):
+            logger.debug("__add__ called with AnimalCage containing %d animals", len(other.animals_in_cage))
+            self._animals_in_cage.extend(other.animals_in_cage)
+
+        else:
+            logger.error("Attempted to add unsupported type: %s", type(other))
+            raise TypeError(f"Can only add Animal or AnimalCage, not {type(other)}")
+
+        logger.debug("Cage now contains %d animals", len(self._animals_in_cage))
         return self
 
-    def __sub__(self, animal: Animal) -> AnimalCage:
+    def __sub__(self, animal: Animal) -> "AnimalCage":
         """
-        Function to remove an animal from the animals_in_cage
-        :param animal: Animal to remove from the animals_in_cage
+        Remove an animal from the cage.
+
+        :param animal: Animal to remove from the cage
+        :raises ValueError: if the animal is not in the cage
         """
-        logger.debug(f"__sub__ called with: {animal}")
-        if animal in self._animals_in_cage:
+        logger.info("__sub__ called with: %s", animal)
+        try:
             self._animals_in_cage.remove(animal)
-            logger.info(f"Removed animal {animal} from cage")
-            logger.debug(f"Cage now contains {len(self._animals_in_cage)} animals")
-        else:
-            logger.info("Failed to remove animal from cage")
+            logger.debug("Removed animal %s from cage", animal)
+
+        except ValueError:
+            logger.error("Failed to remove animal %s: not in cage", animal)
+            raise ValueError(f"Animal {animal} is not in the cage")
+
+        logger.debug("Cage now contains %d animals", len(self._animals_in_cage))
         return self
 
     def __len__(self) -> int:
         """
-        Function to return the amount of animals in the animals_in_cage
+        Return the amount of animals in the animals_in_cage
+
         :return: Amount of animals in the animals_in_cage
         """
         return len(self.animals_in_cage)
-
-    def __iadd__(self, other_cage: AnimalCage) -> AnimalCage:
-        """
-        Function adds another animal cage to current cage
-        :param other_cage: cage to add to current cage
-        :return: original cage, with added members from second cage
-        Usage: cage_1 += cage_2
-        """
-        logger.debug(f"Merging cage with {len(other_cage)} animals into current cage")
-        self._animals_in_cage.extend(other_cage.animals_in_cage)
-        logger.info("Cages merged successfully")
-        logger.debug(f"Cage now contains {len(self._animals_in_cage)} animals")
-        return self
 
     def __str__(self) -> str:
         """
@@ -65,11 +69,12 @@ class AnimalCage:
         if not self.animals_in_cage:
             return "Animal cage is empty"
         animal_strings = [str(animal) for animal in self._animals_in_cage]
+
         return f"AnimalCage with {len(self._animals_in_cage)} animals:\n" + "\n".join(animal_strings)
 
     def __repr__(self) -> str:
         """
-        Function to print animals to developer
+        Print animals to developer
         """
         return f"AnimalCage(animals_in_cage={self._animals_in_cage!r})"
 
