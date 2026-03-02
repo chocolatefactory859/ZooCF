@@ -1,10 +1,12 @@
 import logging
+import os
 
 from singleton.singleton_meta import SingletonMeta
 
 
 class Logger(metaclass=SingletonMeta):
-    def __init__(self, level=logging.INFO):
+    def __init__(self):
+        level = os.getenv("LOG_LEVEL")
         self.setup_logging(level)
         self.logger = logging.getLogger("main logger")
 
