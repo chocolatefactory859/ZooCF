@@ -10,7 +10,7 @@ class Logger(metaclass=SingletonMeta):
         self.setup_logging(level)
         self.logger = logging.getLogger("main logger")
 
-    def setup_logging(self, level):
+    def setup_logging(self, level: str):
         """
         Configure logging
         """
@@ -23,6 +23,6 @@ class Logger(metaclass=SingletonMeta):
 
     def __getattr__(self, name):
         """
-        Delegate attribute access to the internal logger.
+        Allow attribute access to the internal logger
         """
         return getattr(self.logger, name)

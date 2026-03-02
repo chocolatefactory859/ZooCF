@@ -14,7 +14,6 @@ class ModuleLoader:
         class_name = parts[-1]
         return class_name.capitalize()
 
-
     @staticmethod
     def load_module(path_to_module: str) -> ModuleType:
         """
