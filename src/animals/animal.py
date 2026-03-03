@@ -16,7 +16,7 @@ def randomize_age():
     return randint(1, 200)
 
 
-def retry_function(exception_to_catch: Exception) -> None:
+def retry_function(exception_to_catch: Exception) -> "func return value":
     """
     Wrapper for function, retries it until
     ValueError is not raised
@@ -24,8 +24,8 @@ def retry_function(exception_to_catch: Exception) -> None:
     :param func: function to perform on
     :return: None
     """
-    def decorator(func):
-        def wrapper(self, *args, **kwargs) -> None:
+    def decorator(func) -> "func return value":
+        def wrapper(self, *args, **kwargs) -> "func return value":
             while True:
                 try:
                     func(self, *args, **kwargs)
