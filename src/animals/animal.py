@@ -3,6 +3,7 @@ from abc import ABC
 from random import randint
 
 from animals.animal_exceptions import AnimalAgeValueError
+from decorators.retry import retry_until_success
 from logging_config import Logger
 
 logger = Logger()
@@ -11,33 +12,13 @@ MAX_ANIMAL_AGE = int(os.getenv("MAX_ANIMAL_AGE"))
 
 def randomize_age():
     """
-    Function randomizes age from 1 - 200
+    Randomizes age from 1 - 200
     """
     return randint(1, 200)
 
 
-def retry_function(exception_to_catch: Exception) -> "func return value":
-    """
-    Wrapper for function, retries it until
-    ValueError is not raised
-    :param exception_to_catch: exception to catch in function
-    :param func: function to perform on
-    :return: func return value
-    """
-    def decorator(func) -> "func return value":
-        def inner(self, *args, **kwargs) -> "func return value":
-            while True:
-                try:
-                    func(self, *args, **kwargs)
-                    return
-                except exception_to_catch:
-                    logger.debug("Retrying running function")
-        return inner
-    return decorator
-
-
 class Animal(ABC):
-    @retry_function(exception_to_catch=AnimalAgeValueError)
+    @retry_until_success(exception_to_catch=AnimalAgeValueError)
     def __init__(self, name: str, sound: str) -> None:
         self.name: str = name
         self.sound: str = sound
