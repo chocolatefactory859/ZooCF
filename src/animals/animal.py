@@ -1,9 +1,18 @@
+import os
 from abc import ABC
 from random import randint
 
 from logging_config import Logger
 
 logger = Logger()
+MAX_ANIMAL_AGE = int(os.getenv("MAX_ANIMAL_AGE"))
+
+
+def randomize_age():
+    """
+    Function randomizes age from 1 - 200
+    """
+    return randint(1, 200)
 
 
 def age_checker(func) -> None:
@@ -28,9 +37,9 @@ class Animal(ABC):
     def __init__(self, name: str, sound: str) -> None:
         self.name: str = name
         self.sound: str = sound
-        self.age = randint(1, 200)
+        self.age = randomize_age()
 
-        if self.age > 100:
+        if self.age > MAX_ANIMAL_AGE:
             raise ValueError("Age too high")
 
         logger.info(f"Initialized animal: {self.name}")
@@ -58,11 +67,3 @@ class Animal(ABC):
         """
         print("poop")
         logger.debug("%s performed poop()", self.name)
-
-    def age_checker(self):
-        self.__init__()
-        while self.age > 100:
-            self.__init__
-        return self
-
-

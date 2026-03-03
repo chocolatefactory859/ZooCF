@@ -1,5 +1,4 @@
 from __future__ import annotations
-from typing import Union
 
 from animals.animal import Animal
 from logging_config import Logger
@@ -21,21 +20,17 @@ class AnimalCage:
         :return: Self (the cage after addition)
         """
         if isinstance(other, Animal):
-            logger.debug("__add__ called with Animal: %s", other)
+            logger.debug(" Trying to add %s to cage", other)
             self._animals_in_cage.append(other)
+            return self
 
         elif isinstance(other, AnimalCage):
-            logger.debug("__add__ called with AnimalCage containing %d animals", len(other.animals_in_cage))
+            logger.debug("Trying to add %d animals to animal cage", len(other.animals_in_cage))
             new_cage = AnimalCage()
             new_cage._animals_in_cage = (self._animals_in_cage.copy() + other.animals_in_cage.copy())
             return new_cage
 
-        else:
-            logger.error("Attempted to add unsupported type: %s", type(other))
-            raise TypeError(f"Can only add Animal or AnimalCage, not {type(other)}")
-
-        logger.debug("Cage now contains %d animals", len(self._animals_in_cage))
-        return self
+        raise TypeError(f"Can only add Animal or AnimalCage, not {type(other)}")
 
     def __sub__(self, animal: Animal) -> AnimalCage:
         """
@@ -44,7 +39,7 @@ class AnimalCage:
         :param animal: Animal to remove from the cage
         :raises ValueError: if the animal is not in the cage
         """
-        logger.info("__sub__ called with: %s", animal)
+        logger.info("Trying to remove %s from cage", animal)
         try:
             self._animals_in_cage.remove(animal)
             logger.debug("Removed animal %s from cage", animal)
