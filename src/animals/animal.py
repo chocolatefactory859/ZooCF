@@ -1,4 +1,5 @@
 from abc import ABC
+from random import randint
 
 from logging_config import Logger
 
@@ -9,10 +10,12 @@ class Animal(ABC):
     def __init__(self, name: str, sound: str) -> None:
         self.name: str = name
         self.sound: str = sound
+        self.age: int = 201
+
         logger.info(f"Initialized animal: {self.name}")
 
     def __str__(self) -> str:
-        return f"Name: {self.name} sound: {self.sound}"
+        return f"Name: {self.name} Sound: {self.sound} Age: {self.age}"
 
     def print_your_name(self) -> None:
         """
