@@ -2,6 +2,7 @@ import os
 from abc import ABC
 from random import randint
 
+from animals.animal_exceptions import AnimalAgeValueError
 from logging_config import Logger
 
 logger = Logger()
@@ -15,7 +16,7 @@ def randomize_age():
     return randint(1, 200)
 
 
-def age_checker(func) -> None:
+def retry_function(func) -> None:
     """
     Wrapper for function, retries it until
     ValueError is not raised
@@ -27,20 +28,20 @@ def age_checker(func) -> None:
             try:
                 func(self, *args, **kwargs)
                 return
-            except ValueError:
-                logger.debug("Retrying Animal initialization")
+            except AnimalAgeValueError:
+                logger.debug("Retrying running function")
     return wrapper
 
 
 class Animal(ABC):
-    @age_checker
+    @retry_function
     def __init__(self, name: str, sound: str) -> None:
         self.name: str = name
         self.sound: str = sound
         self.age = randomize_age()
 
         if self.age > MAX_ANIMAL_AGE:
-            raise ValueError("Age too high")
+            raise AnimalAgeValueError()
 
         logger.info(f"Initialized animal: {self.name}")
 
