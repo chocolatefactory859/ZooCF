@@ -22,17 +22,17 @@ def retry_function(exception_to_catch: Exception) -> "func return value":
     ValueError is not raised
     :param exception_to_catch: exception to catch in function
     :param func: function to perform on
-    :return: None
+    :return: func return value
     """
     def decorator(func) -> "func return value":
-        def wrapper(self, *args, **kwargs) -> "func return value":
+        def inner(self, *args, **kwargs) -> "func return value":
             while True:
                 try:
                     func(self, *args, **kwargs)
                     return
                 except exception_to_catch:
                     logger.debug("Retrying running function")
-        return wrapper
+        return inner
     return decorator
 
 
