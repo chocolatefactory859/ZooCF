@@ -6,8 +6,7 @@ logger = Logger()
 def retry_until_success(exception_to_catch: Exception):
     """
     Wrapper retries it until exception_to_catch is not raised
-    :param exception_to_catch: Exception to catch in function
-    :param func: Function to perform on
+    param: exception_to_catch: Exception to catch
     """
     def decorator(func):
         def inner(*args, **kwargs):
@@ -15,6 +14,6 @@ def retry_until_success(exception_to_catch: Exception):
                 try:
                     return func(*args, **kwargs)
                 except exception_to_catch:
-                    logger.debug("Retrying running function")
+                    logger.debug("Retrying running")
         return inner
     return decorator

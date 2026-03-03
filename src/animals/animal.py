@@ -37,18 +37,18 @@ class Animal(ABC):
         Prints animal name
         """
         print(self.name)
-        logger.debug("print_your_name called for %s", self.name)
+        logger.debug(f"{self.name} printed name")
 
     def print_your_sound(self) -> None:
         """
         Prints animal sound
         """
         print(self.sound)
-        logger.debug("print_your_sound called for %s", self.name)
+        logger.debug(f"{self.name} printed sound")
 
     def poop(self) -> None:
         """
         Prints poop
         """
         print("poop")
-        logger.debug("%s performed poop()", self.name)
+        logger.debug(f"{self.name} performed poop")
