@@ -16,25 +16,28 @@ def randomize_age():
     return randint(1, 200)
 
 
-def retry_function(func) -> None:
+def retry_function(exception_to_catch: Exception) -> None:
     """
     Wrapper for function, retries it until
     ValueError is not raised
+    :param exception_to_catch: exception to catch in function
     :param func: function to perform on
     :return: None
     """
-    def wrapper(self, *args, **kwargs) -> None:
-        while True:
-            try:
-                func(self, *args, **kwargs)
-                return
-            except AnimalAgeValueError:
-                logger.debug("Retrying running function")
-    return wrapper
+    def decorator(func):
+        def wrapper(self, *args, **kwargs) -> None:
+            while True:
+                try:
+                    func(self, *args, **kwargs)
+                    return
+                except exception_to_catch:
+                    logger.debug("Retrying running function")
+        return wrapper
+    return decorator
 
 
 class Animal(ABC):
-    @retry_function
+    @retry_function(exception_to_catch=AnimalAgeValueError)
     def __init__(self, name: str, sound: str) -> None:
         self.name: str = name
         self.sound: str = sound
