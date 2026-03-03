@@ -6,11 +6,32 @@ from logging_config import Logger
 logger = Logger()
 
 
+def age_checker(func) -> None:
+    """
+    Wrapper for function, retries it until
+    ValueError is not raised
+    :param func: function to perform on
+    :return: None
+    """
+    def wrapper(self, *args, **kwargs) -> None:
+        while True:
+            try:
+                func(self, *args, **kwargs)
+                return
+            except ValueError:
+                logger.debug("Retrying Animal initialization")
+    return wrapper
+
+
 class Animal(ABC):
+    @age_checker
     def __init__(self, name: str, sound: str) -> None:
         self.name: str = name
         self.sound: str = sound
-        self.age: int = 201
+        self.age = randint(1, 200)
+
+        if self.age > 100:
+            raise ValueError("Age too high")
 
         logger.info(f"Initialized animal: {self.name}")
 
@@ -37,3 +58,11 @@ class Animal(ABC):
         """
         print("poop")
         logger.debug("%s performed poop()", self.name)
+
+    def age_checker(self):
+        self.__init__()
+        while self.age > 100:
+            self.__init__
+        return self
+
+
