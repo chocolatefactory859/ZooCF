@@ -13,7 +13,7 @@ def retry_until_success(exception_to_catch: Exception):
             while True:
                 try:
                     return func(*args, **kwargs)
-                except exception_to_catch:
-                    logger.debug("Retrying running")
+                except exception_to_catch as e:
+                    logger.debug(f"Retrying running, {e}")
         return inner
     return decorator
