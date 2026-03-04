@@ -5,6 +5,7 @@ from objects.object_instance_factory import ObjectInstanceFactory
 from parser.zoo_parser import ZooParser
 
 from logging_config import Logger
+from toilet.toilet import Toilet
 
 logger = Logger()
 
@@ -32,8 +33,9 @@ def main():
     print(animal_cage)
     animal_cage -= animal
 
-    print(animal_cage)
-    print(f"Amount of animals in cage: {len(animal_cage)}")
+    with Toilet():
+        print(animal_cage)
+        print(f"Amount of animals in cage: {len(animal_cage)}")
 
     animal_cage += animal_cage_2
     print(animal_cage)
