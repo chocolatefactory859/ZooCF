@@ -2,12 +2,10 @@ from __future__ import annotations
 import sys
 from typing import TextIO
 
-from singleton.singleton_meta import SingletonMeta
-
 ORIGINAL_STDOUT = sys.stdout
 
 
-class Toilet(metaclass=SingletonMeta):
+class Toilet:
     def __init__(self):
         self.lid_state: bool = False
         self.output_file: TextIO = open("toilet_output.txt", 'w')
