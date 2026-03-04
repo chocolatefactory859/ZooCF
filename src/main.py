@@ -8,6 +8,7 @@ from logging_config import Logger
 from toilet.toilet import Toilet
 
 logger = Logger()
+toilet = Toilet()
 
 
 def main():
@@ -33,8 +34,9 @@ def main():
     print(animal_cage)
     animal_cage -= animal
 
-    with Toilet():
+    with toilet:
         print(animal_cage)
+        # toilet.flush_toilet()
         print(f"Amount of animals in cage: {len(animal_cage)}")
 
     animal_cage += animal_cage_2
