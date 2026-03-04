@@ -1,4 +1,4 @@
 AnimalCage with 2 animals:
-Name: cat1 Sound: Meow Age: 84
-Name: dog Sound: How Age: 15
+Name: cat1 Sound: Meow Age: 79
+Name: dog Sound: How Age: 96
 Amount of animals in cage: 2

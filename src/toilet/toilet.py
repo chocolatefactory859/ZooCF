@@ -11,14 +11,15 @@ logger = Logger()
 class Toilet:
     def __init__(self):
         self.lid_state: bool = False
-        self.output_file = None
+
+        toilet_output_filepath = os.getenv("TOILET_OUTPUT")
+        self.output_file = open(toilet_output_filepath, 'a')
 
     def open_lid(self):
         """
         Changes stdout to file
         """
         self.lid_state = True
-        self.output_file = open(os.getenv("TOILET_OUTPUT"), 'a')
         sys.stdout = self.output_file
         logger.info("Opened toilet lid")
 
@@ -28,7 +29,7 @@ class Toilet:
         """
         self.lid_state = False
         sys.stdout = ORIGINAL_STDOUT
-        self.info("Closed toilet lid")
+        logger.info("Closed toilet lid")
 
     def flush_toilet(self):
         """
