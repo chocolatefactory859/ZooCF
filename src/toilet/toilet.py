@@ -1,5 +1,4 @@
 from __future__ import annotations
-import os
 import sys
 
 from logging_config import Logger
@@ -9,11 +8,10 @@ logger = Logger()
 
 
 class Toilet:
-    def __init__(self):
+    def __init__(self, toilet_output_path):
+        self.toilet_output_path = toilet_output_path
         self.lid_state: bool = False
-
-        toilet_output_filepath = os.getenv("TOILET_OUTPUT")
-        self.output_file = open(toilet_output_filepath, 'a')
+        self.output_file = open(self.toilet_output_path, 'a')
 
     def open_lid(self):
         """
@@ -35,8 +33,9 @@ class Toilet:
         """
         Flush toilet contents
         """
-        open(os.getenv("TOILET_OUTPUT"), 'w').close()
-        self.output_file = open(os.getenv("TOILET_OUTPUT"), 'a')
+       # self.output_file.close()
+        open(self.toilet_output_path, 'w').close()
+        self.output_file = open(self.toilet_output_path, 'a')
         logger.info("Flushed toilet")
 
     def __enter__(self) -> Toilet:
@@ -55,3 +54,4 @@ class Toilet:
         :param exc_tb: Exception traceback
         """
         self.close_lid()
+        self.output_file.close()

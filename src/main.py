@@ -1,3 +1,5 @@
+import os
+
 from animals.animal import Animal
 from animals.cage.animal_cage import AnimalCage
 from input.text_file_reader import TextFileReader
@@ -6,6 +8,7 @@ from parser.zoo_parser import ZooParser
 
 from logging_config import Logger
 from toilet.toilet import Toilet
+
 
 logger = Logger()
 
@@ -16,6 +19,7 @@ def main():
     argument_parser = ZooParser()
     received_input = argument_parser.parse_input()
     animals_file_path = received_input.get("filepath")
+    toilet_output_path = os.getenv("TOILET_OUTPUT")
 
     potential_animal_names = TextFileReader.read_input_to_words(animals_file_path)
     animal_cage = AnimalCage()
@@ -33,7 +37,7 @@ def main():
     print(animal_cage)
     animal_cage -= animal
 
-    with Toilet() as toilet:
+    with Toilet(toilet_output_path=toilet_output_path) as toilet:
         print(animal_cage)
         toilet.flush_toilet()
         print(f"Amount of animals in cage: {len(animal_cage)}")
