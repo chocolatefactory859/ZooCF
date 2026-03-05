@@ -34,10 +34,12 @@ class Toilet:
         Flush toilet contents
         """
         sys.stdout = ORIGINAL_STDOUT
+
         self.output_file.close()
         open(self.toilet_output_path, 'w').close()
         self.output_file = open(self.toilet_output_path, 'a')
         logger.info("Flushed toilet")
+
         sys.stdout = self.output_file
 
     def __enter__(self) -> Toilet:
@@ -56,4 +58,9 @@ class Toilet:
         :param exc_tb: Exception traceback
         """
         self.close_lid()
-        self.output_file.close()
+        if not self.output_file.closed:
+            self.output_file.close()
+        if exc_type is not None:
+            logger.error(f"Error occurred: {exc_val}")
+
+        return False
