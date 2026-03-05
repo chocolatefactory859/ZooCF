@@ -3,21 +3,22 @@ import sys
 
 from logging_config import Logger
 
-ORIGINAL_STDOUT = sys.stdout
 logger = Logger()
 
 
 class Toilet:
     def __init__(self, toilet_output_path):
+        self.default_stdout = sys.stdout
         self.toilet_output_path = toilet_output_path
         self.lid_state: bool = False
-        self.output_file = open(self.toilet_output_path, 'a')
+        self.output_file = None
 
     def open_lid(self):
         """
         Changes stdout to file
         """
         self.lid_state = True
+        self.output_file = open(self.toilet_output_path, 'a')
         sys.stdout = self.output_file
         logger.info("Opened toilet lid")
 
@@ -26,21 +27,18 @@ class Toilet:
         Changes stdout back to original
         """
         self.lid_state = False
-        sys.stdout = ORIGINAL_STDOUT
+        sys.stdout = self.default_stdout
+        self.output_file.close()
         logger.info("Closed toilet lid")
 
     def flush_toilet(self):
         """
         Flush toilet contents
         """
-        sys.stdout = ORIGINAL_STDOUT
+        self.output_file.seek(0)
+        self.output_file.truncate()
 
-        self.output_file.close()
-        open(self.toilet_output_path, 'w').close()
-        self.output_file = open(self.toilet_output_path, 'a')
         logger.info("Flushed toilet")
-
-        sys.stdout = self.output_file
 
     def __enter__(self) -> Toilet:
         """
@@ -58,8 +56,6 @@ class Toilet:
         :param exc_tb: Exception traceback
         """
         self.close_lid()
-        if not self.output_file.closed:
-            self.output_file.close()
         if exc_type is not None:
             logger.error(f"Error occurred: {exc_val}")
 

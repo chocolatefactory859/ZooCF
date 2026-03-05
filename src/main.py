@@ -19,7 +19,7 @@ def main():
     argument_parser = ZooParser()
     received_input = argument_parser.parse_input()
     animals_file_path = received_input.get("filepath")
-    toilet_output_path = os.getenv("TOILET_OUTPUT")
+    toilet_output_path = received_input.get("toilet_output")
 
     potential_animal_names = TextFileReader.read_input_to_words(animals_file_path)
     animal_cage = AnimalCage()

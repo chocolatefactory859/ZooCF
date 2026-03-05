@@ -8,6 +8,7 @@ class ZooParser(InputParser, metaclass=SingletonMeta):
     def __init__(self):
         self.parser = argparse.ArgumentParser(usage='Parses arguments from user, according to given flags')
         self.parser.add_argument("filepath", help="Please enter file path to read animal names from")
+        self.parser.add_argument("toilet_output", help="Please enter file path to toilet output")
 
     def parse_input(self) -> dict[str, any]:
         """
