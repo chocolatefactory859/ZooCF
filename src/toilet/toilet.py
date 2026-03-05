@@ -33,10 +33,12 @@ class Toilet:
         """
         Flush toilet contents
         """
-       # self.output_file.close()
+        sys.stdout = ORIGINAL_STDOUT
+        self.output_file.close()
         open(self.toilet_output_path, 'w').close()
         self.output_file = open(self.toilet_output_path, 'a')
         logger.info("Flushed toilet")
+        sys.stdout = self.output_file
 
     def __enter__(self) -> Toilet:
         """

@@ -1,4 +1,1 @@
-AnimalCage with 2 animals:
-Name: cat1 Sound: Meow Age: 30
-Name: dog Sound: How Age: 18
 Amount of animals in cage: 2
