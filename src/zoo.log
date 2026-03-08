@@ -4552,3 +4552,60 @@
 2026-03-05 16:48:43,841 - INFO - main logger - Closed toilet lid
 2026-03-05 16:48:43,841 - DEBUG - main logger - Trying to add 3 animals to animal cage
 2026-03-05 16:48:43,841 - INFO - main logger - Initialized animal cage
+2026-03-05 17:01:41,995 - INFO - main logger - Starting zoo
+2026-03-05 17:01:42,009 - INFO - main logger - Initialized animal cage
+2026-03-05 17:01:42,010 - INFO - main logger - Initialized animal cage
+2026-03-05 17:01:42,011 - DEBUG - main logger - Retrying running, Impossible value for animal age
+2026-03-05 17:01:42,011 - INFO - main logger - Initialized animal: cat1
+2026-03-05 17:01:42,011 - DEBUG - main logger - cat1 printed name
+2026-03-05 17:01:42,011 - DEBUG - main logger - cat1 printed sound
+2026-03-05 17:01:42,011 - DEBUG - main logger - cat1 performed poop
+2026-03-05 17:01:42,011 - DEBUG - main logger -  Trying to add Name: cat1 Sound: Meow Age: 75 to cage
+2026-03-05 17:01:42,012 - DEBUG - main logger -  Trying to add Name: cat1 Sound: Meow Age: 75 to cage
+2026-03-05 17:01:42,012 - INFO - main logger - Initialized animal: dog
+2026-03-05 17:01:42,012 - DEBUG - main logger - dog printed name
+2026-03-05 17:01:42,012 - DEBUG - main logger - dog printed sound
+2026-03-05 17:01:42,012 - DEBUG - main logger - dog performed poop
+2026-03-05 17:01:42,012 - DEBUG - main logger -  Trying to add Name: dog Sound: How Age: 78 to cage
+2026-03-05 17:01:42,012 - DEBUG - main logger -  Trying to add Name: dog Sound: How Age: 78 to cage
+2026-03-05 17:01:42,013 - INFO - main logger - Initialized animal: duck
+2026-03-05 17:01:42,013 - DEBUG - main logger - duck printed name
+2026-03-05 17:01:42,013 - DEBUG - main logger - duck printed sound
+2026-03-05 17:01:42,013 - DEBUG - main logger - duck performed poop
+2026-03-05 17:01:42,013 - DEBUG - main logger -  Trying to add Name: duck Sound: Quack Age: 49 to cage
+2026-03-05 17:01:42,013 - DEBUG - main logger -  Trying to add Name: duck Sound: Quack Age: 49 to cage
+2026-03-05 17:01:42,013 - INFO - main logger - Trying to remove Name: duck Sound: Quack Age: 49 from cage
+2026-03-05 17:01:42,013 - DEBUG - main logger - Removed animal Name: duck Sound: Quack Age: 49 from cage
+2026-03-05 17:01:42,013 - DEBUG - main logger - Cage now contains 2 animals
+2026-03-05 17:01:54,997 - INFO - main logger - Starting zoo
+2026-03-05 17:01:55,012 - INFO - main logger - Initialized animal cage
+2026-03-05 17:01:55,012 - INFO - main logger - Initialized animal cage
+2026-03-05 17:01:55,014 - DEBUG - main logger - Retrying running, Impossible value for animal age
+2026-03-05 17:01:55,014 - INFO - main logger - Initialized animal: cat1
+2026-03-05 17:01:55,014 - DEBUG - main logger - cat1 printed name
+2026-03-05 17:01:55,014 - DEBUG - main logger - cat1 printed sound
+2026-03-05 17:01:55,014 - DEBUG - main logger - cat1 performed poop
+2026-03-05 17:01:55,014 - DEBUG - main logger -  Trying to add Name: cat1 Sound: Meow Age: 56 to cage
+2026-03-05 17:01:55,015 - DEBUG - main logger -  Trying to add Name: cat1 Sound: Meow Age: 56 to cage
+2026-03-05 17:01:55,015 - INFO - main logger - Initialized animal: dog
+2026-03-05 17:01:55,015 - DEBUG - main logger - dog printed name
+2026-03-05 17:01:55,015 - DEBUG - main logger - dog printed sound
+2026-03-05 17:01:55,015 - DEBUG - main logger - dog performed poop
+2026-03-05 17:01:55,015 - DEBUG - main logger -  Trying to add Name: dog Sound: How Age: 84 to cage
+2026-03-05 17:01:55,015 - DEBUG - main logger -  Trying to add Name: dog Sound: How Age: 84 to cage
+2026-03-05 17:01:55,016 - DEBUG - main logger - Retrying running, Impossible value for animal age
+2026-03-05 17:01:55,016 - DEBUG - main logger - Retrying running, Impossible value for animal age
+2026-03-05 17:01:55,016 - INFO - main logger - Initialized animal: duck
+2026-03-05 17:01:55,016 - DEBUG - main logger - duck printed name
+2026-03-05 17:01:55,016 - DEBUG - main logger - duck printed sound
+2026-03-05 17:01:55,016 - DEBUG - main logger - duck performed poop
+2026-03-05 17:01:55,016 - DEBUG - main logger -  Trying to add Name: duck Sound: Quack Age: 88 to cage
+2026-03-05 17:01:55,016 - DEBUG - main logger -  Trying to add Name: duck Sound: Quack Age: 88 to cage
+2026-03-05 17:01:55,016 - INFO - main logger - Trying to remove Name: duck Sound: Quack Age: 88 from cage
+2026-03-05 17:01:55,016 - DEBUG - main logger - Removed animal Name: duck Sound: Quack Age: 88 from cage
+2026-03-05 17:01:55,016 - DEBUG - main logger - Cage now contains 2 animals
+2026-03-05 17:01:55,017 - INFO - main logger - Opened toilet lid
+2026-03-05 17:01:55,017 - INFO - main logger - Flushed toilet
+2026-03-05 17:01:55,017 - INFO - main logger - Closed toilet lid
+2026-03-05 17:01:55,017 - DEBUG - main logger - Trying to add 3 animals to animal cage
+2026-03-05 17:01:55,017 - INFO - main logger - Initialized animal cage

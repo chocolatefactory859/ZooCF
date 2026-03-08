@@ -19,6 +19,7 @@ class Toilet:
         """
         self.lid_state = True
         self.output_file = open(self.toilet_output_path, 'a')
+
         sys.stdout = self.output_file
         logger.info("Opened toilet lid")
 
@@ -28,6 +29,7 @@ class Toilet:
         """
         self.lid_state = False
         sys.stdout = self.default_stdout
+
         self.output_file.close()
         logger.info("Closed toilet lid")
 
