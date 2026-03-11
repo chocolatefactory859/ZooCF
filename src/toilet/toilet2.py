@@ -1,6 +1,5 @@
 from __future__ import annotations
 import sys
-from contextlib import contextmanager
 from typing import IO
 
 from logging_config import Logger
@@ -44,23 +43,3 @@ class Toilet2:
 
         logger.info("Flushed toilet")
 
-    @contextmanager
-    def toilet_context(toilet_output_path: str) -> Toilet:
-        """
-        Function-based context manager for Toilet.
-
-        Opens the toilet lid and redirects stdout to the toilet file.
-        Ensures the lid is closed even if an exception occurs.
-
-        :param toilet_output_path: Path to the toilet output file.
-        :yield: Toilet instance.
-        """
-        toilet = Toilet2(toilet_output_path)
-        try:
-            toilet.open_lid()
-            yield toilet
-        except Exception as e:
-            logger.error(f"Error occurred: {e}")
-            raise
-        finally:
-            toilet.close_lid()
