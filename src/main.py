@@ -1,9 +1,5 @@
-import os
-
-from animals.animal import Animal
 from animals.cage.animal_cage import AnimalCage
-from input.text_file_reader import TextFileReader
-from objects.object_instance_factory import ObjectInstanceFactory
+from generator.animal_generator import AnimalGenerator
 from parser.zoo_parser import ZooParser
 
 from logging_config import Logger
@@ -21,16 +17,14 @@ def main():
     animals_file_path = received_input.get("filepath")
     toilet_output_path = received_input.get("toilet_output")
 
-    potential_animal_names = TextFileReader.read_input_to_words(animals_file_path)
     animal_cage = AnimalCage()
     animal_cage_2 = AnimalCage()
 
-    for potential_animal_name in potential_animal_names:
-        animal: Animal = ObjectInstanceFactory.create_object(potential_animal_name, potential_animal_name)
-        #zoo2:
+    for animal in AnimalGenerator.generate_animals(animals_file_path):
         animal.print_your_name()
         animal.print_your_sound()
         animal.poop()
+
         animal_cage = animal_cage + animal
         animal_cage_2 = animal_cage_2 + animal
 
