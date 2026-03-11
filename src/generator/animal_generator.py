@@ -9,6 +9,6 @@ class AnimalGenerator:
         the Object Factory
         param: file_path: File to get animal names from
         """
-        with open(file_path) as f:
-            for name in f.read().split():
-                yield ObjectInstanceFactory.create_object(name, name)
+        with open(file_path) as file:
+            for animal_name in file.read().split():
+                yield ObjectInstanceFactory.create_object(animal_name, animal_name)
