@@ -1,5 +1,6 @@
 from animals.cage.animal_cage import AnimalCage
 from generator.animal_generator import AnimalGenerator
+from generator.animal_generator2 import AnimalGenerator2
 from parser.zoo_parser import ZooParser
 
 from logging_config import Logger
@@ -20,7 +21,9 @@ def main():
     animal_cage = AnimalCage()
     animal_cage_2 = AnimalCage()
 
-    for animal in AnimalGenerator.generate_animals2(animals_file_path):
+    animal_generator = AnimalGenerator2(animals_file_path)
+
+    for animal in animal_generator:
         animal.print_your_name()
         animal.print_your_sound()
         animal.poop()
