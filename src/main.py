@@ -20,7 +20,7 @@ def main():
     animal_cage = AnimalCage()
     animal_cage_2 = AnimalCage()
 
-    for animal in AnimalGenerator.generate_animals(animals_file_path):
+    for animal in AnimalGenerator.generate_animals2(animals_file_path):
         animal.print_your_name()
         animal.print_your_sound()
         animal.poop()
