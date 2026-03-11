@@ -5,7 +5,7 @@ from parser.zoo_parser import ZooParser
 
 from logging_config import Logger
 from toilet.toilet import Toilet
-
+from toilet.toilet2 import Toilet2
 
 logger = Logger()
 
@@ -34,7 +34,7 @@ def main():
     print(animal_cage)
     animal_cage -= animal
 
-    with Toilet(toilet_output_path=toilet_output_path) as toilet:
+    with Toilet2.toilet_context(toilet_output_path) as toilet:
         print(animal_cage)
         toilet.flush_toilet()
         print(f"Amount of animals in cage: {len(animal_cage)}")
