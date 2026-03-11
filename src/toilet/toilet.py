@@ -1,5 +1,6 @@
 from __future__ import annotations
 import sys
+from typing import IO
 
 from logging_config import Logger
 
@@ -7,44 +8,44 @@ logger = Logger()
 
 
 class Toilet:
-    def __init__(self, toilet_output_path):
-        self.default_stdout = sys.stdout
-        self.toilet_output_path = toilet_output_path
-        self.lid_state: bool = False
-        self.output_file = None
+    def __init__(self, toilet_output_path: str):
+        self._default_stdout: IO = sys.stdout
+        self._toilet_output_path: str = toilet_output_path
+        self._lid_state: bool = False
+        self._output_file: IO = None
 
     def open_lid(self):
         """
-        Changes stdout to file
+         Opens the toilet lid and redirect standard output to the toilet file
         """
-        self.lid_state = True
-        self.output_file = open(self.toilet_output_path, 'a')
+        self._lid_state = True
+        self._output_file = open(self._toilet_output_path, 'a')
 
-        sys.stdout = self.output_file
+        sys.stdout = self._output_file
         logger.info("Opened toilet lid")
 
     def close_lid(self):
         """
         Changes stdout back to original
         """
-        self.lid_state = False
-        sys.stdout = self.default_stdout
+        self._lid_state = False
+        sys.stdout = self._default_stdout
 
-        self.output_file.close()
+        self._output_file.close()
         logger.info("Closed toilet lid")
 
     def flush_toilet(self):
         """
         Flush toilet contents
         """
-        self.output_file.seek(0)
-        self.output_file.truncate()
+        self._output_file.seek(0)
+        self._output_file.truncate()
 
         logger.info("Flushed toilet")
 
     def __enter__(self) -> Toilet:
         """
-        Defines what happens when toilet is called
+         Opens the toilet lid and returns the current Toilet instance
         :return: Open toilet
         """
         self.open_lid()
